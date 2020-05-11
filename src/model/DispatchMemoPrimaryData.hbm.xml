@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="beans.DispatchMemoPrimaryData" table="dispatch_memo_primary_data" >
+		<id name="dispatchMemoId" type="java.lang.Integer">
+			<column name="dispatch_memo_id"></column>
+			<generator class="increment"></generator>
+		</id>
+		<property name="dispatchMemoDocNo" type="java.lang.String">
+			<column name="dispatch_memo_doc_no" length="20"></column>
+		</property>
+		
+		<property name="dispatchMemoRevNo" type="java.lang.String">
+			<column name="dispatch_memo_rev_no"></column>
+		</property>
+		<property name="dispatchMemoDocDate" type="date">
+			<column name="dispatch_memo_doc_date"></column>
+		</property>
+		<property name="dispatchMemoDate" type="date">
+			<column name="dispatch_memo_date"></column>
+		</property>
+		<property name="dispatchMemoFileNo" type="java.lang.String">
+			<column name="dispatch_memo_file_no" length="30"></column>
+		</property>
+		<property name="dispatchMemoNo" type="java.lang.String">
+			<column name="dispatch_memo_no" length="20"></column>
+		</property>
+		
+		<property name="entryDate" type="timestamp">
+			<column name="entry_date"></column>
+		</property>
+		<property name="entryBy" type="java.lang.String">
+			<column name="entry_by" length="20"></column>
+		</property>
+				
+	</class>
+</hibernate-mapping>

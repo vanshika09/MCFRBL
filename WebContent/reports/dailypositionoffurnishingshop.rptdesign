@@ -1,0 +1,2111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="Para_Year" id="772">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">2019-2020</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/MCFRBL</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cG9zdGdyZXNz</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Target Data Set" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">asset_subtype</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">asset_subtype</text-property>
+                    <text-property name="heading">asset_subtype</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">target</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">target</text-property>
+                    <text-property name="heading">target</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">month_seq</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">month_seq</text-property>
+                    <text-property name="heading">month_seq</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">month_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">month_code</text-property>
+                    <text-property name="heading">month_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">asset_subtype_1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">asset_subtype</text-property>
+                    <text-property name="heading">asset_subtype</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">month_code1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">month_code1</text-property>
+                    <text-property name="heading">month_code1</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">coaches_gate_out_count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">coaches_gate_out_count</text-property>
+                    <text-property name="heading">coaches_gate_out_count</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cumilative</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cumilative</text-property>
+                    <text-property name="heading">cumilative</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">waiting_for_dispacth_count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">waiting_for_dispacth_count</text-property>
+                    <text-property name="heading">waiting_for_dispacth_count</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">asset_subtype</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">target</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">month_seq</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">month_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">asset_subtype_1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">month_code1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">coaches_gate_out_count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">cumilative</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">waiting_for_dispacth_count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">asset_subtype</property>
+                    <property name="nativeName">asset_subtype</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">target</property>
+                    <property name="nativeName">target</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">month_seq</property>
+                    <property name="nativeName">month_seq</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">5</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">month_code</property>
+                    <property name="nativeName">month_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">asset_subtype_1</property>
+                    <property name="nativeName">asset_subtype</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">month_code1</property>
+                    <property name="nativeName">month_code1</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">coaches_gate_out_count</property>
+                    <property name="nativeName">coaches_gate_out_count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">cumilative</property>
+                    <property name="nativeName">cumilative</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">waiting_for_dispacth_count</property>
+                    <property name="nativeName">waiting_for_dispacth_count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select a.asset_subtype,c.yr_coach_target as target,m.month_seq,m.month_code,
+case when a.asset_subtype='HUMSAFAR' then 'HUM'
+when a.asset_subtype='LWSCZAC' THEN 'CZAC'
+ELSE a.asset_subtype end as asset_subtype,
+case 
+when m.month_seq between 1 and 9 then m.month_code||'-'||substring(c.financial_year,3,2)
+else m.month_code||'-'||substring(c.financial_year,8,9) end as month_code1,
+(select count(*) from furnishing_tran p
+ where crnt_fin_year(coach_dispatch_date)=c.financial_year 
+ and crnt_mon(coach_dispatch_date)=m.month_code and
+ p.coach_type=a.asset_subtype and coach_dispatch_date is not null) as coaches_gate_out_count,
+ sum((select count(*) from furnishing_tran p
+ where p.coach_type=a.asset_subtype and coach_dispatch_date is not null 
+  and crnt_fin_year(coach_dispatch_date)=c.financial_year )) as cumilative,
+  (select count(*) from furnishing_tran p
+ where p.coach_type=a.asset_subtype and dispatch_memo_date is not null and assembly_dispatch_date is null) as waiting_for_dispacth_count
+from month_finance_year_master as m,asset_master as a inner join coach_target as c on a.asset_subtype=c.coach_type
+where asset_type='Coach' and asset_subtype not in('Others','RSP') and 
+c.financial_year=?
+group by a.asset_subtype,c.yr_coach_target,m.month_seq,m.month_code,c.financial_year]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set date" id="776">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">crdate</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">crdate</text-property>
+                    <text-property name="heading">crdate</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">crdate</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">crdate</property>
+                    <property name="nativeName">crdate</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select ' Position as on: '||to_char(public.fin_tday_wday_v.prev_date::date,'dd-mm-yyyy') crdate
+from public.fin_tday_wday_v
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>crdate</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>crdate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>crdate</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set total" id="1131">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">sumtarget</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">sumtarget</text-property>
+                    <text-property name="heading">sumtarget</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">sumapril</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">sumapril</text-property>
+                    <text-property name="heading">sumapril</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cumilativesum</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cumilativesum</text-property>
+                    <text-property name="heading">cumilativesum</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">awaitingsum</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">awaitingsum</text-property>
+                    <text-property name="heading">awaitingsum</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">sumtarget</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">sumapril</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">cumilativesum</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">awaitingsum</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">sumtarget</property>
+                    <property name="nativeName">sumtarget</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">sumapril</property>
+                    <property name="nativeName">sumapril</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">cumilativesum</property>
+                    <property name="nativeName">cumilativesum</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">awaitingsum</property>
+                    <property name="nativeName">awaitingsum</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select sum(c.yr_coach_target) as sumtarget,
+sum((select count(*) from furnishing_tran p
+ where crnt_fin_year(coach_dispatch_date)=c.financial_year 
+ and crnt_mon(coach_dispatch_date)='APR' and
+ p.coach_type=a.asset_subtype and coach_dispatch_date is not null)) as sumapril,
+sum((select count(*) from furnishing_tran p
+ where p.coach_type=a.asset_subtype and coach_dispatch_date is not null and crnt_fin_year(coach_dispatch_date)=c.financial_year)) as cumilativesum,
+sum((select count(*) from furnishing_tran p
+ where p.coach_type=a.asset_subtype and dispatch_memo_date is not null and assembly_dispatch_date is null)) as awaitingsum
+from asset_master as a inner join coach_target as c on a.asset_subtype=c.coach_type
+where asset_type='Coach' and asset_subtype not in('Others','RSP') and 
+c.financial_year=?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>sumtarget</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>sumtarget</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>sumtarget</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>cumilativesum</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>cumilativesum</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>cumilativesum</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>awaitingsum</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>awaitingsum</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>awaitingsum</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set currentmonth_gateouttarget" id="1313">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">asset_sub_type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">asset_sub_type</text-property>
+                    <text-property name="heading">asset_sub_type</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">currentmonthtarget</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">currentmonthtarget</text-property>
+                    <text-property name="heading">currentmonthtarget</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">asset_subtype1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">asset_subtype1</text-property>
+                    <text-property name="heading">asset_subtype1</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">currentmonthcoachoturntarget</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">currentmonthcoachoturntarget</text-property>
+                    <text-property name="heading">currentmonthcoachoturntarget</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">asset_sub_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">currentmonthtarget</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">asset_subtype1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">currentmonthcoachoturntarget</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">asset_sub_type</property>
+                    <property name="nativeName">asset_sub_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">currentmonthtarget</property>
+                    <property name="nativeName">currentmonthtarget</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">asset_subtype1</property>
+                    <property name="nativeName">asset_subtype1</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">currentmonthcoachoturntarget</property>
+                    <property name="nativeName">currentmonthcoachoturntarget</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select a.asset_sub_type,asset_monthly_target_qty as currentmonthtarget,
+case when a.asset_sub_type='HUMSAFAR' then 'HUM'
+when a.asset_sub_type='LWSCZAC' THEN 'CZAC'
+ELSE a.asset_sub_type end as asset_subtype1,
+(select count(*) 
+ from furnishing_tran p
+ where crnt_fin_year(assembly_dispatch_date)=fin_yr_code 
+ and crnt_mon(assembly_dispatch_date)=crnt_mon(b.crnt_date) and p.coach_type=a.asset_sub_type and assembly_dispatch_date is not null) as currentmonthcoachoturntarget
+ from shop_monthly_target as a,set_date as b
+ where asset_type='Coach' and asset_sub_type not in('Others','RSP') 
+ and fin_yr_code=? and month_code=crnt_mon(b.crnt_date);]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>asset_sub_type</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>25</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>asset_sub_type</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>asset_sub_type</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>currentmonthtarget</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>8</design:precision>
+            <design:scale>8</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>currentmonthtarget</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>currentmonthtarget</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>currentmonthcoachoturntarget</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>currentmonthcoachoturntarget</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>currentmonthcoachoturntarget</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set prevmonth" id="1314">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">asset_sub_type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">asset_sub_type</text-property>
+                    <text-property name="heading">asset_sub_type</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">asset_subtype1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">asset_subtype1</text-property>
+                    <text-property name="heading">asset_subtype1</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">untilprevmonthtarget</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">untilprevmonthtarget</text-property>
+                    <text-property name="heading">untilprevmonthtarget</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">untilprevmonthcoachoturntarget</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">untilprevmonthcoachoturntarget</text-property>
+                    <text-property name="heading">untilprevmonthcoachoturntarget</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">asset_sub_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">asset_subtype1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">untilprevmonthtarget</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">untilprevmonthcoachoturntarget</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">asset_sub_type</property>
+                    <property name="nativeName">asset_sub_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">asset_subtype1</property>
+                    <property name="nativeName">asset_subtype1</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">untilprevmonthtarget</property>
+                    <property name="nativeName">untilprevmonthtarget</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">untilprevmonthcoachoturntarget</property>
+                    <property name="nativeName">untilprevmonthcoachoturntarget</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select (a.asset_sub_type),
+case when a.asset_sub_type='HUMSAFAR' then 'HUM'
+when a.asset_sub_type='LWSCZAC' THEN 'CZAC'
+ELSE a.asset_sub_type end as asset_subtype1,
+case when crnt_mon(b.crnt_date)='APR' then 0
+else sum(asset_monthly_target_qty) end as untilprevmonthtarget,
+case 
+when crnt_mon(b.crnt_date)='APR' then 0
+else
+(select count(*) 
+ from furnishing_tran p
+ where crnt_fin_year(assembly_dispatch_date)=fin_yr_code 
+ and crnt_mon(assembly_dispatch_date)=month_code and p.coach_type=a.asset_sub_type and assembly_dispatch_date is not null) end 
+ as untilprevmonthcoachoturntarget
+from shop_monthly_target as a,set_date as b
+where asset_type='Coach' and fin_yr_code=? and
+asset_sub_type not in('Others','RSP') 
+group by a.asset_sub_type,month_code,b.crnt_date,fin_yr_code 
+having month_code in(select month_code											     
+                        from month_finance_year_master,set_date b
+                            where month_seq<(select month_seq
+                        from month_finance_year_master
+                         where month_code=crnt_mon(b.crnt_date))) or crnt_mon(b.crnt_date)='APR'
+						  order by a.asset_sub_type]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>asset_sub_type</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>25</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>asset_sub_type</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>asset_sub_type</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>untilprevmonthtarget</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>8</design:precision>
+            <design:scale>8</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>untilprevmonthtarget</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>untilprevmonthtarget</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>untilprevmonthcoachoturntarget</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>untilprevmonthcoachoturntarget</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>untilprevmonthcoachoturntarget</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <joint-data-set name="Data Set" id="1473">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Data Set prevmonth::untilprevmonthcoachoturntarget</property>
+                    <property name="alias">untilprevmonthcoachoturntarget</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Data Set prevmonth::untilprevmonthcoachoturntarget</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set prevmonth::untilprevmonthtarget</property>
+                    <property name="alias">untilprevmonthtarget</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Data Set prevmonth::untilprevmonthtarget</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set currentmonth_gateouttarget::asset_subtype1</property>
+                    <property name="alias">Data Set currentmonth_gateouttarget::asset_subtype1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set currentmonth_gateouttarget::asset_subtype1</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set prevmonth::asset_sub_type</property>
+                    <property name="alias">Data Set prevmonth::asset_sub_type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set prevmonth::asset_sub_type</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set currentmonth_gateouttarget::currentmonthtarget</property>
+                    <property name="alias">currentmonthtarget</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Data Set currentmonth_gateouttarget::currentmonthtarget</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set currentmonth_gateouttarget::currentmonthcoachoturntarget</property>
+                    <property name="alias">currentmonthcoachoturntarget</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Data Set currentmonth_gateouttarget::currentmonthcoachoturntarget</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set prevmonth::asset_subtype1</property>
+                    <property name="alias">Data Set prevmonth::asset_subtype1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set prevmonth::asset_subtype1</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set currentmonth_gateouttarget::asset_sub_type</property>
+                    <property name="alias">Data Set currentmonth_gateouttarget::asset_sub_type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set currentmonth_gateouttarget::asset_sub_type</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">Data Set currentmonth_gateouttarget::param_1</property>
+                    <property name="dataType">string</property>
+                    <property name="position">0</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set prevmonth::param_1</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Data Set currentmonth_gateouttarget::asset_sub_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">currentmonthtarget</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">Data Set currentmonth_gateouttarget::asset_subtype1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">currentmonthcoachoturntarget</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">Data Set prevmonth::asset_sub_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">Data Set prevmonth::asset_subtype1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">untilprevmonthtarget</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">untilprevmonthcoachoturntarget</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <simple-property-list name="dataSets">
+                <value>Data Set currentmonth_gateouttarget</value>
+                <value>Data Set prevmonth</value>
+            </simple-property-list>
+            <list-property name="joinConditions">
+                <structure>
+                    <property name="joinType">inner</property>
+                    <property name="joinOperator">eq</property>
+                    <property name="leftDataSet">Data Set currentmonth_gateouttarget</property>
+                    <property name="rightDataSet">Data Set prevmonth</property>
+                    <expression name="leftExpression">dataSetRow["asset_subtype1"]</expression>
+                    <expression name="rightExpression">dataSetRow["asset_subtype1"]</expression>
+                </structure>
+            </list-property>
+        </joint-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set current month" id="1510">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">month_code1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">month_code1</text-property>
+                    <text-property name="heading">month_code1</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">month_code1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">month_code1</property>
+                    <property name="nativeName">month_code1</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select 
+case 
+when month_seq between 1 and 9 then 'Furnishing Coach Outturn Position '||month_code||'-'||substring(f.fnyr,3,2)||' Target'
+else 'Furnishing Coach Outturn Position '||month_code||'-'||substring(f.fnyr,8,9)||' Target' end as month_code1
+from public.fin_tday_wday_v,fnyr_mon_start_end_date_v as f
+where cal_seq in(select extract(month from crnt_date)) and f.fnyr=?
+
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>target</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>target</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>target</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube3" id="332">
+            <property name="dimensions">
+                <tabular-dimension name="Group4" id="333">
+                    <property name="defaultHierarchy">NewTabularHierarchy4</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy4" id="334">
+                            <property name="levels">
+                                <tabular-level name="asset_subtype" id="1518">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">asset_subtype_1</property>
+                                </tabular-level>
+                                <tabular-level name="target" id="339">
+                                    <property name="dataType">decimal</property>
+                                    <property name="columnName">target</property>
+                                </tabular-level>
+                                <tabular-level name="cumilative" id="340">
+                                    <property name="dataType">decimal</property>
+                                    <property name="columnName">cumilative</property>
+                                </tabular-level>
+                                <tabular-level name="waiting_for_dispacth_count" id="341">
+                                    <property name="dataType">decimal</property>
+                                    <property name="columnName">waiting_for_dispacth_count</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group" id="778">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="779">
+                            <property name="levels">
+                                <tabular-level name="asset_subtype1" id="1517">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">asset_subtype_1</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group1" id="781">
+                    <property name="defaultHierarchy">NewTabularHierarchy1</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy1" id="782">
+                            <property name="levels">
+                                <tabular-level name="month_seq" id="783">
+                                    <property name="dataType">integer</property>
+                                    <property name="columnName">month_seq</property>
+                                </tabular-level>
+                                <tabular-level name="month_code1" id="1144">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">month_code1</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field" id="785">
+                    <property name="measures">
+                        <tabular-measure name="coaches_gate_out_count" id="786">
+                            <property name="function">sum</property>
+                            <property name="isCalculated">false</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["coaches_gate_out_count"]</expression>
+                            <property name="dataType">float</property>
+                            <property name="isVisible">true</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field1" id="1042">
+                    <property name="measures">
+                        <tabular-measure name="target" id="1043">
+                            <property name="function">sum</property>
+                            <property name="isCalculated">false</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["target"]</expression>
+                            <property name="dataType">string</property>
+                            <property name="isVisible">true</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field2" id="1044">
+                    <property name="measures">
+                        <tabular-measure name="cumilative" id="1045">
+                            <property name="function">sum</property>
+                            <property name="isCalculated">false</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["cumilative"]</expression>
+                            <property name="dataType">decimal</property>
+                            <property name="isVisible">true</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field3" id="1046">
+                    <property name="measures">
+                        <tabular-measure name="waiting_for_dispacth_count" id="1047">
+                            <property name="function">sum</property>
+                            <property name="isCalculated">false</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["waiting_for_dispacth_count"]</expression>
+                            <property name="dataType">decimal</property>
+                            <property name="isVisible">true</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">Target Data Set</property>
+        </tabular-cube>
+        <tabular-cube name="Data Cube currentmonth" id="1315">
+            <property name="dimensions">
+                <tabular-dimension name="Group2" id="1316">
+                    <property name="defaultHierarchy">NewTabularHierarchy2</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy2" id="1317">
+                            <property name="levels">
+                                <tabular-level name="asset_sub_type" id="1318">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">asset_sub_type</property>
+                                </tabular-level>
+                                <tabular-level name="currentmonthtarget" id="1320">
+                                    <property name="dataType">float</property>
+                                    <property name="columnName">currentmonthtarget</property>
+                                </tabular-level>
+                                <tabular-level name="currentmonthcoachoturntarget" id="1319">
+                                    <property name="dataType">decimal</property>
+                                    <property name="columnName">currentmonthcoachoturntarget</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="dataSet">Data Set currentmonth_gateouttarget</property>
+        </tabular-cube>
+        <tabular-cube name="Data Cube prevmonth" id="1321">
+            <property name="dimensions">
+                <tabular-dimension name="Group3" id="1322">
+                    <property name="defaultHierarchy">NewTabularHierarchy3</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy3" id="1323">
+                            <property name="levels">
+                                <tabular-level name="asset_sub_type" id="1324">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">asset_sub_type</property>
+                                </tabular-level>
+                                <tabular-level name="untilprevmonthcoachoturntarget" id="1325">
+                                    <property name="dataType">decimal</property>
+                                    <property name="columnName">untilprevmonthcoachoturntarget</property>
+                                </tabular-level>
+                                <tabular-level name="untilprevmonthtarget" id="1326">
+                                    <property name="dataType">float</property>
+                                    <property name="columnName">untilprevmonthtarget</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="dataSet">Data Set prevmonth</property>
+        </tabular-cube>
+        <tabular-cube name="Data Cube currentprev month" id="1474">
+            <property name="dimensions">
+                <tabular-dimension name="Group5" id="1475">
+                    <property name="defaultHierarchy">NewTabularHierarchy5</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy5" id="1476">
+                            <property name="levels">
+                                <tabular-level name="Data Set currentmonth_gateouttarget::asset_subtype1" id="1564">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">Data Set currentmonth_gateouttarget::asset_subtype1</property>
+                                </tabular-level>
+                                <tabular-level name="Data Set currentmonth_gateouttarget::currentmonthtarget" id="1478">
+                                    <property name="dataType">float</property>
+                                    <property name="columnName">currentmonthtarget</property>
+                                </tabular-level>
+                                <tabular-level name="Data Set currentmonth_gateouttarget::currentmonthcoachoturntarget" id="1479">
+                                    <property name="dataType">decimal</property>
+                                    <property name="columnName">currentmonthcoachoturntarget</property>
+                                </tabular-level>
+                                <tabular-level name="Data Set prevmonth::untilprevmonthtarget" id="1480">
+                                    <property name="dataType">float</property>
+                                    <property name="columnName">untilprevmonthtarget</property>
+                                </tabular-level>
+                                <tabular-level name="Data Set prevmonth::untilprevmonthcoachoturntarget" id="1481">
+                                    <property name="dataType">decimal</property>
+                                    <property name="columnName">untilprevmonthcoachoturntarget</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="dataSet">Data Set</property>
+        </tabular-cube>
+    </cubes>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a3</property>
+            <property name="orientation">portrait</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="756">
+            <property name="height">0.65625in</property>
+            <column id="757"/>
+            <column id="758"/>
+            <column id="759"/>
+            <column id="775"/>
+            <column id="761"/>
+            <row id="762">
+                <property name="height">0.65625in</property>
+                <cell id="763">
+                    <image id="768">
+                        <property name="height">0.5416666666666666in</property>
+                        <property name="width">0.5833333333333334in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">/images/cris_logo.jpg</expression>
+                    </image>
+                </cell>
+                <cell id="764">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="684">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">'Financial Year '+' '+BirtStr.concat(BirtStr.left(params["Para_Year"].value,5),BirtStr.right(params["Para_Year"].value,2))+' Gate Out Target'</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+                <cell id="774">
+                    <data id="777">
+                        <property name="dataSet">Data Set date</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">crdate</property>
+                                <text-property name="displayName">crdate</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["crdate"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">crdate</property>
+                    </data>
+                </cell>
+                <cell id="767">
+                    <image id="769">
+                        <property name="height">0.53125in</property>
+                        <property name="width">0.625in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">/images/mcf_logo.jpg</expression>
+                    </image>
+                </cell>
+            </row>
+        </grid>
+        <label id="1136">
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">Monthwise Gate Out Position</text-property>
+        </label>
+        <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="1519">
+            <property name="cube">Data Cube3</property>
+            <property name="measures">
+                <extended-item extensionName="MeasureView" id="1542">
+                    <property name="measure">coaches_gate_out_count</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="1543">
+                            <property name="aggregationOnRow">Group4/waiting_for_dispacth_count</property>
+                            <property name="aggregationOnColumn">Group1/month_code1</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="content">
+                                <data id="1544">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">coaches_gate_out_count_Group4/waiting_for_dispacth_count_Group1/month_code1</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="1545">
+                            <property name="content">
+                                <data name="month_code11" id="1563">
+                                    <property name="fontWeight">normal</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">month_code1</property>
+                                </data>
+                            </property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="rows">
+                <extended-item extensionName="CrosstabView" id="1521">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="1522">
+                            <property name="dimension">Group4</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View11" id="1523">
+                                    <property name="level">Group4/asset_subtype</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1524">
+                                            <property name="content">
+                                                <data name="asset_subtype1" id="1525">
+                                                    <property name="fontWeight">normal</property>
+                                                    <property name="textAlign">left</property>
+                                                    <property name="resultSetColumn">asset_subtype</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View12" id="1527">
+                                    <property name="level">Group4/target</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1528">
+                                            <property name="content">
+                                                <data name="target1" id="1530">
+                                                    <property name="fontWeight">normal</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">target</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View13" id="1532">
+                                    <property name="level">Group4/cumilative</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1533">
+                                            <property name="content">
+                                                <data name="cumilative1" id="1535">
+                                                    <property name="fontWeight">normal</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">cumilative</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View14" id="1537">
+                                    <property name="level">Group4/waiting_for_dispacth_count</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1538">
+                                            <property name="content">
+                                                <data name="waiting_for_dispacth_count1" id="1540">
+                                                    <property name="fontWeight">normal</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">waiting_for_dispacth_count</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="columns">
+                <extended-item extensionName="CrosstabView" id="1547">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="1548">
+                            <property name="dimension">Group1</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View15" id="1549">
+                                    <property name="level">Group1/month_seq</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1550"/>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View16" id="1557">
+                                    <property name="level">Group1/month_code1</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1558"/>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="1551"/>
+                <extended-item extensionName="CrosstabCell" id="1552"/>
+                <extended-item extensionName="CrosstabCell" id="1553"/>
+                <extended-item extensionName="CrosstabCell" id="1554"/>
+                <extended-item extensionName="CrosstabCell" id="1559"/>
+                <extended-item extensionName="CrosstabCell" id="1560"/>
+                <extended-item extensionName="CrosstabCell" id="1561"/>
+                <extended-item extensionName="CrosstabCell" id="1562"/>
+                <extended-item extensionName="CrosstabCell" id="1520">
+                    <property name="content">
+                        <label id="1526">
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Coach</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1529">
+                    <property name="content">
+                        <label id="1531">
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Target</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1534">
+                    <property name="content">
+                        <label id="1536">
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Total Gate Out</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1539">
+                    <property name="content">
+                        <label id="1541">
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Awaiting Gate Out</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+            </property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">asset_subtype</property>
+                    <expression name="expression">dimension["Group4"]["asset_subtype"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">target</property>
+                    <expression name="expression">dimension["Group4"]["target"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">cumilative</property>
+                    <expression name="expression">dimension["Group4"]["cumilative"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">waiting_for_dispacth_count</property>
+                    <expression name="expression">dimension["Group4"]["waiting_for_dispacth_count"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">coaches_gate_out_count_Group4/waiting_for_dispacth_count</property>
+                    <expression name="expression">measure["coaches_gate_out_count"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group4/waiting_for_dispacth_count</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">month_seq</property>
+                    <expression name="expression">dimension["Group1"]["month_seq"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">coaches_gate_out_count_Group4/waiting_for_dispacth_count_Group1/month_seq</property>
+                    <expression name="expression">measure["coaches_gate_out_count"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group4/waiting_for_dispacth_count</value>
+                        <value>Group1/month_seq</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">month_code1</property>
+                    <expression name="expression">dimension["Group1"]["month_code1"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">coaches_gate_out_count_Group4/waiting_for_dispacth_count_Group1/month_code1</property>
+                    <expression name="expression">measure["coaches_gate_out_count"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group4/waiting_for_dispacth_count</value>
+                        <value>Group1/month_code1</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+            </list-property>
+        </extended-item>
+        <grid id="1005">
+            <column id="1006"/>
+            <column id="1007"/>
+            <column id="1008"/>
+            <column id="1009"/>
+            <column id="1010"/>
+            <column id="1011"/>
+            <column id="1012"/>
+            <column id="1013"/>
+            <column id="1014"/>
+            <column id="1015"/>
+            <column id="1016"/>
+            <column id="1017"/>
+            <column id="1018"/>
+            <column id="1019"/>
+            <column id="1020"/>
+            <column id="1021"/>
+            <row id="1022">
+                <cell id="1023">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <label id="1039">
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">Total</text-property>
+                    </label>
+                </cell>
+                <cell id="1024">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <data id="1132">
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <property name="dataSet">Data Set total</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">sumtarget</property>
+                                <text-property name="displayName">sumtarget</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["sumtarget"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">sumtarget</property>
+                    </data>
+                </cell>
+                <cell id="1025">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <data id="1133">
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <property name="dataSet">Data Set total</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cumilativesum</property>
+                                <text-property name="displayName">cumilativesum</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cumilativesum"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cumilativesum</property>
+                    </data>
+                </cell>
+                <cell id="1026">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <data id="1134">
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <property name="dataSet">Data Set total</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">awaitingsum</property>
+                                <text-property name="displayName">awaitingsum</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["awaitingsum"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">awaitingsum</property>
+                    </data>
+                </cell>
+                <cell id="1027">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </cell>
+                <cell id="1028">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </cell>
+                <cell id="1029">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </cell>
+                <cell id="1030">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </cell>
+                <cell id="1031">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </cell>
+                <cell id="1032">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </cell>
+                <cell id="1033">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </cell>
+                <cell id="1034">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </cell>
+                <cell id="1035">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </cell>
+                <cell id="1036">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </cell>
+                <cell id="1037">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </cell>
+                <cell id="1038">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </cell>
+            </row>
+        </grid>
+        <label id="1516"/>
+        <grid id="1511">
+            <column id="1512"/>
+            <row id="1513">
+                <cell id="1514">
+                    <data id="1515">
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <property name="dataSet">Data Set current month</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">month_code1</property>
+                                <text-property name="displayName">month_code1</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["month_code1"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">month_code1</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <label id="1248"/>
+        <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="1565">
+            <property name="cube">Data Cube currentprev month</property>
+            <property name="columns">
+                <extended-item extensionName="CrosstabView" id="1567">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="1568">
+                            <property name="dimension">Group5</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View" id="1569">
+                                    <property name="level">Group5/Data Set currentmonth_gateouttarget::asset_subtype1</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1570">
+                                            <property name="content">
+                                                <data name="Data Set currentmonth_gateouttarget::asset_subtype1" id="1571">
+                                                    <property name="fontWeight">normal</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">Data Set currentmonth_gateouttarget::asset_subtype1</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View1" id="1573">
+                                    <property name="level">Group5/Data Set currentmonth_gateouttarget::currentmonthtarget</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1574">
+                                            <property name="content">
+                                                <data name="Data Set currentmonth_gateouttarget::currentmonthtarget" id="1576">
+                                                    <property name="fontWeight">normal</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">Data Set currentmonth_gateouttarget::currentmonthtarget</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View2" id="1578">
+                                    <property name="level">Group5/Data Set currentmonth_gateouttarget::currentmonthcoachoturntarget</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1579">
+                                            <property name="content">
+                                                <data name="Data Set currentmonth_gateouttarget::currentmonthcoachoturntarget" id="1581">
+                                                    <property name="fontWeight">normal</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">Data Set currentmonth_gateouttarget::currentmonthcoachoturntarget</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View3" id="1583">
+                                    <property name="level">Group5/Data Set prevmonth::untilprevmonthtarget</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1584">
+                                            <property name="content">
+                                                <data name="Data Set prevmonth::untilprevmonthtarget" id="1586">
+                                                    <property name="fontWeight">normal</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">Data Set prevmonth::untilprevmonthtarget</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View4" id="1588">
+                                    <property name="level">Group5/Data Set prevmonth::untilprevmonthcoachoturntarget</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1589">
+                                            <property name="content">
+                                                <data name="Data Set prevmonth::untilprevmonthcoachoturntarget" id="1591">
+                                                    <property name="fontWeight">normal</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">Data Set prevmonth::untilprevmonthcoachoturntarget</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="1566">
+                    <property name="content">
+                        <label id="1572">
+                            <text-property name="text">Coach</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1575">
+                    <property name="content">
+                        <label id="1577">
+                            <property name="fontSize">10px</property>
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Current Month Target</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1580">
+                    <property name="content">
+                        <label id="1582">
+                            <property name="fontSize">10px</property>
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Current Month Outturn</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1585">
+                    <property name="content">
+                        <label id="1587">
+                            <property name="fontSize">10px</property>
+                            <property name="textAlign">left</property>
+                            <text-property name="text">TillPrev Month Target</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1590">
+                    <property name="content">
+                        <label id="1592">
+                            <property name="fontSize">10px</property>
+                            <property name="textAlign">left</property>
+                            <text-property name="text">TillPrev Month Outturn</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+            </property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Data Set currentmonth_gateouttarget::asset_subtype1</property>
+                    <expression name="expression">dimension["Group5"]["Data Set currentmonth_gateouttarget::asset_subtype1"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set currentmonth_gateouttarget::currentmonthtarget</property>
+                    <expression name="expression">dimension["Group5"]["Data Set currentmonth_gateouttarget::currentmonthtarget"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set currentmonth_gateouttarget::currentmonthcoachoturntarget</property>
+                    <expression name="expression">dimension["Group5"]["Data Set currentmonth_gateouttarget::currentmonthcoachoturntarget"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set prevmonth::untilprevmonthtarget</property>
+                    <expression name="expression">dimension["Group5"]["Data Set prevmonth::untilprevmonthtarget"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set prevmonth::untilprevmonthcoachoturntarget</property>
+                    <expression name="expression">dimension["Group5"]["Data Set prevmonth::untilprevmonthcoachoturntarget"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+        </extended-item>
+    </body>
+</report>

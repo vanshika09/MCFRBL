@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29 Jan, 2020 4:21:51 PM by Hibernate Tools 4.0.1.Final -->
+<hibernate-mapping>
+    <class name="beans.DispatchMemoTran" table="dispatch_memo_tran">
+        <composite-id>
+            <key-property name="dispatchMemoId" type="integer">
+                <column name="dispatch_memo_id"/>
+            </key-property>
+            <key-property name="furnishingAssetId" type="integer">
+                <column name="furnishing_asset_id"/>
+            </key-property>
+            
+        </composite-id>
+        <property name="coachNo" type="string">
+            <column name="coach_no" length="15"/>
+        </property>
+    </class>
+</hibernate-mapping>

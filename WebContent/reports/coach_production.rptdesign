@@ -1,0 +1,2526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="Para_Year" id="820">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="96">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/MCFRBL</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cG9zdGdyZXNz</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="crdt_ds" id="347">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">crdate</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">crdate</text-property>
+                    <text-property name="heading">crdate</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">crdate</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">crdate</property>
+                    <property name="nativeName">crdate</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select 'Position as on: '||to_char(public.fin_tday_wday_v.prev_date::date,'dd-mm-yyyy') crdate
+from public.fin_tday_wday_v
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>crdate</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>crdate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>crdate</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="data Data Set" id="460">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">month_seq</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">month_seq</text-property>
+                    <text-property name="heading">month_seq</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">month_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">month_code</text-property>
+                    <text-property name="heading">month_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">asset_subtype</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">asset_subtype</text-property>
+                    <text-property name="heading">asset_subtype</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">shell_production_count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">shell_production_count</text-property>
+                    <text-property name="heading">shell_production_count</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">paint_to_furn_count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">paint_to_furn_count</text-property>
+                    <text-property name="heading">paint_to_furn_count</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">bogie_production_count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">bogie_production_count</text-property>
+                    <text-property name="heading">bogie_production_count</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">bogie_to_furn_count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">bogie_to_furn_count</text-property>
+                    <text-property name="heading">bogie_to_furn_count</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">coach_lowered_count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">coach_lowered_count</text-property>
+                    <text-property name="heading">coach_lowered_count</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">coach_memo_issued_count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">coach_memo_issued_count</text-property>
+                    <text-property name="heading">coach_memo_issued_count</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">waiting_for_dispacth_count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">waiting_for_dispacth_count</text-property>
+                    <text-property name="heading">waiting_for_dispacth_count</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">coaches_gate_out_count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">coaches_gate_out_count</text-property>
+                    <text-property name="heading">coaches_gate_out_count</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_3</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_4</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">4</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_5</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">5</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_6</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">6</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_7</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">7</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_8</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">8</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">month_seq</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">month_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">asset_subtype</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">shell_production_count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">paint_to_furn_count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">bogie_production_count</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">bogie_to_furn_count</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">coach_lowered_count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">coach_memo_issued_count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">waiting_for_dispacth_count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">coaches_gate_out_count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">month_seq</property>
+                    <property name="nativeName">month_seq</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">5</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">month_code</property>
+                    <property name="nativeName">month_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">asset_subtype</property>
+                    <property name="nativeName">asset_subtype</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">shell_production_count</property>
+                    <property name="nativeName">shell_production_count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">paint_to_furn_count</property>
+                    <property name="nativeName">paint_to_furn_count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">bogie_production_count</property>
+                    <property name="nativeName">bogie_production_count</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">bogie_to_furn_count</property>
+                    <property name="nativeName">bogie_to_furn_count</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">coach_lowered_count</property>
+                    <property name="nativeName">coach_lowered_count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">coach_memo_issued_count</property>
+                    <property name="nativeName">coach_memo_issued_count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">waiting_for_dispacth_count</property>
+                    <property name="nativeName">waiting_for_dispacth_count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">coaches_gate_out_count</property>
+                    <property name="nativeName">coaches_gate_out_count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select month_seq,month_code,c.asset_subtype,
+(select count(*) from shell_tran a inner join furnishing_tran p on a.shell_asset_id=p.shell_asset_id
+ where crnt_fin_year(a.assembly_dispatch_date)=? and crnt_mon(a.assembly_dispatch_date)=month_code and 
+ p.coach_type=c.asset_subtype and a.assembly_dispatch_date is not null) as shell_production_count,
+(select count(*) from paint_tran p 
+ where crnt_fin_year(assembly_dispatch_date)=? and crnt_mon(assembly_dispatch_date)=month_code and 
+ p.coach_type=c.asset_subtype and assembly_dispatch_date is not null) as paint_to_furn_count,
+ cal_coach_prod_count_for_bogie(asset_subtype,month_code,?) as bogie_production_count,
+ cal_coach_dispatch_count_for_bogie(asset_subtype,month_code,?) as bogie_to_furn_count,
+(select count(*) from furnishing_tran p 
+ where crnt_fin_year(coach_lowering_date)=? and crnt_mon(coach_lowering_date)=month_code and 
+ p.coach_type=c.asset_subtype and coach_lowering_date is not null) as coach_lowered_count,
+ (select count(*) from furnishing_tran p 
+ where crnt_fin_year(dispatch_memo_date)=? and crnt_mon(dispatch_memo_date)=month_code and 
+ p.coach_type=c.asset_subtype and dispatch_memo_date is not null) as coach_memo_issued_count,
+ (select count(*) from furnishing_tran p 
+ where crnt_fin_year(dispatch_memo_date)=? and crnt_mon(dispatch_memo_date)=month_code and 
+ p.coach_type=c.asset_subtype and dispatch_memo_date is not null and assembly_dispatch_date is null) as waiting_for_dispacth_count,
+ (select count(*) from furnishing_tran p 
+ where crnt_fin_year(coach_dispatch_date)=? and crnt_mon(coach_dispatch_date)=month_code and 
+ p.coach_type=c.asset_subtype and coach_dispatch_date is not null) as coaches_gate_out_count
+ from month_finance_year_master,coach_type_status_view c
+order by month_seq,asset_subtype;]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="data1 Data Set" id="821">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">month_seq</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">month_seq</text-property>
+                    <text-property name="heading">month_seq</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">month_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">month_code</text-property>
+                    <text-property name="heading">month_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">shell_shop_production</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">shell_shop_production</text-property>
+                    <text-property name="heading">shell_shop_production</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">paint_to_furn_count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">paint_to_furn_count</text-property>
+                    <text-property name="heading">paint_to_furn_count</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">bogie_shop_production</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">bogie_shop_production</text-property>
+                    <text-property name="heading">bogie_shop_production</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">bogie_to_paint_count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">bogie_to_paint_count</text-property>
+                    <text-property name="heading">bogie_to_paint_count</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">coach_lowered_count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">coach_lowered_count</text-property>
+                    <text-property name="heading">coach_lowered_count</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">coach_memo_issued_count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">coach_memo_issued_count</text-property>
+                    <text-property name="heading">coach_memo_issued_count</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">waiting_count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">waiting_count</text-property>
+                    <text-property name="heading">waiting_count</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">coaches_gate_out_count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">coaches_gate_out_count</text-property>
+                    <text-property name="heading">coaches_gate_out_count</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_3</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_4</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">4</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_5</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">5</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_6</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">6</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_7</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">7</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_8</property>
+                    <property name="paramName">Para_Year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">8</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">month_seq</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">month_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">shell_shop_production</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">paint_to_furn_count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">bogie_shop_production</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">bogie_to_paint_count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">coach_lowered_count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">coach_memo_issued_count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">waiting_count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">coaches_gate_out_count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">month_seq</property>
+                    <property name="nativeName">month_seq</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">5</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">month_code</property>
+                    <property name="nativeName">month_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">shell_shop_production</property>
+                    <property name="nativeName">shell_shop_production</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">paint_to_furn_count</property>
+                    <property name="nativeName">paint_to_furn_count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">bogie_shop_production</property>
+                    <property name="nativeName">bogie_shop_production</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">bogie_to_paint_count</property>
+                    <property name="nativeName">bogie_to_paint_count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">coach_lowered_count</property>
+                    <property name="nativeName">coach_lowered_count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">coach_memo_issued_count</property>
+                    <property name="nativeName">coach_memo_issued_count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">waiting_count</property>
+                    <property name="nativeName">waiting_count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">coaches_gate_out_count</property>
+                    <property name="nativeName">coaches_gate_out_count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select month_seq,month_code,
+
+(select count(*) from shell_tran a inner join furnishing_tran p on a.shell_asset_id=p.shell_asset_id
+ where crnt_fin_year(a.assembly_dispatch_date)=? and crnt_mon(a.assembly_dispatch_date)=month_code and 
+ p.coach_type in (select c.asset_subtype from coach_type_status_view c ) and a.assembly_dispatch_date is not null) as shell_shop_production,
+
+(select count(*) from paint_tran p 
+ where crnt_fin_year(assembly_dispatch_date)=? and crnt_mon(assembly_dispatch_date)=month_code and 
+ p.coach_type in (select c.asset_subtype from coach_type_status_view c ) and assembly_dispatch_date is not null) as paint_to_furn_count,
+ 
+ (select count(*) from bogieset_trans as a inner join furnishing_tran as p
+ on (a.bogie_asset_id=p.bogie_pp_side_asset_id) or (a.bogie_asset_id=p.bogie_npp_side_asset_id)
+where crnt_fin_year(a.assembly_exit_date)=? and crnt_mon(a.assembly_exit_date)=month_code and assembly_dispatch_date is not null
+and p.coach_type in (select c.asset_subtype from coach_type_status_view c )) as bogie_shop_production,
+
+(select count(*) from bogieset_trans as a inner join furnishing_tran as p 
+on (a.bogie_asset_id=p.bogie_pp_side_asset_id) or (a.bogie_asset_id=p.bogie_npp_side_asset_id)
+where crnt_fin_year(a.receipt_next_shop_date)=? and crnt_mon(a.receipt_next_shop_date)=month_code
+ and a.receipt_next_shop_date is not null and a.dispatch_to='furnishing'
+and p.coach_type in (select c.asset_subtype from coach_type_status_view c ) )as bogie_to_paint_count,
+
+(select count(*) from furnishing_tran p 
+ where crnt_fin_year(coach_lowering_date)=? and crnt_mon(coach_lowering_date)=month_code and 
+ p.coach_type in (select c.asset_subtype from coach_type_status_view c )  and coach_lowering_date is not null) as coach_lowered_count,
+ 
+ (select count(*) from furnishing_tran p 
+ where crnt_fin_year(dispatch_memo_date)=? and crnt_mon(dispatch_memo_date)=month_code and 
+ p.coach_type in (select c.asset_subtype from coach_type_status_view c )  and dispatch_memo_date is not null) as coach_memo_issued_count,
+ 
+ (select count(*) from furnishing_tran p 
+ where crnt_fin_year(dispatch_memo_date)=? and crnt_mon(dispatch_memo_date)=month_code and 
+ p.coach_type in (select c.asset_subtype from coach_type_status_view c ) and dispatch_memo_date is not null and assembly_dispatch_date is null) as waiting_count,
+ 
+ (select count(*) from furnishing_tran p 
+ where crnt_fin_year(coach_dispatch_date)=? and crnt_mon(coach_dispatch_date)=month_code and 
+ p.coach_type in (select c.asset_subtype from coach_type_status_view c ) and coach_dispatch_date is not null) as coaches_gate_out_count
+ from month_finance_year_master
+order by month_seq;]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>month_seq</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>5</design:nativeDataTypeCode>
+            <design:precision>5</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>month_seq</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>month_seq</design:label>
+            <design:formattingHints>
+              <design:displaySize>6</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>month_code</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>3</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>month_code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>month_code</design:label>
+            <design:formattingHints>
+              <design:displaySize>3</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>asset_subtype</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>25</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>asset_subtype</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>asset_subtype</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>month_wise_shell_count</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>month_wise_shell_count</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>month_wise_shell_count</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>paint_to_furn_count</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>paint_to_furn_count</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>paint_to_furn_count</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>coach_lowered_date</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>coach_lowered_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>coach_lowered_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>coach_memo_issued_date</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>coach_memo_issued_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>coach_memo_issued_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>coach_memo_issued_waiting_for_dispacth</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>coach_memo_issued_waiting_for_dispacth</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>coach_memo_issued_waiting_for_dispacth</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>dispatch_coaches_gate_out</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>dispatch_coaches_gate_out</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>dispatch_coaches_gate_out</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="monthycount Data Cube" id="461">
+            <property name="dimensions">
+                <tabular-dimension name="Group" id="462">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="463">
+                            <property name="levels">
+                                <tabular-level name="month_seq" id="464">
+                                    <property name="dataType">integer</property>
+                                    <property name="columnName">month_seq</property>
+                                </tabular-level>
+                                <tabular-level name="month_code" id="467">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">month_code</property>
+                                </tabular-level>
+                                <tabular-level name="asset_subtype" id="468">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">asset_subtype</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field" id="993">
+                    <property name="measures">
+                        <tabular-measure name="shell_production_count" id="994">
+                            <expression name="measureExpression" type="javascript">dataSetRow["shell_production_count"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field1" id="995">
+                    <property name="measures">
+                        <tabular-measure name="paint_to_furn_count" id="996">
+                            <expression name="measureExpression" type="javascript">dataSetRow["paint_to_furn_count"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field2" id="997">
+                    <property name="measures">
+                        <tabular-measure name="bogie_production_count" id="998">
+                            <expression name="measureExpression" type="javascript">dataSetRow["bogie_production_count"]</expression>
+                            <property name="dataType">integer</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field3" id="999">
+                    <property name="measures">
+                        <tabular-measure name="bogie_to_furn_count" id="1000">
+                            <expression name="measureExpression" type="javascript">dataSetRow["bogie_to_furn_count"]</expression>
+                            <property name="dataType">integer</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field4" id="1001">
+                    <property name="measures">
+                        <tabular-measure name="coach_lowered_count" id="1002">
+                            <expression name="measureExpression" type="javascript">dataSetRow["coach_lowered_count"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field5" id="1003">
+                    <property name="measures">
+                        <tabular-measure name="coach_memo_issued_count" id="1004">
+                            <expression name="measureExpression" type="javascript">dataSetRow["coach_memo_issued_count"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field12" id="1005">
+                    <property name="measures">
+                        <tabular-measure name="waiting_for_dispacth_count" id="1006">
+                            <expression name="measureExpression" type="javascript">dataSetRow["waiting_for_dispacth_count"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field13" id="1007">
+                    <property name="measures">
+                        <tabular-measure name="coaches_gate_out_count" id="1008">
+                            <expression name="measureExpression" type="javascript">dataSetRow["coaches_gate_out_count"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">data Data Set</property>
+        </tabular-cube>
+        <tabular-cube name="data1 Data Cube" id="832">
+            <property name="dimensions">
+                <tabular-dimension name="Group1" id="833">
+                    <property name="defaultHierarchy">NewTabularHierarchy1</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy1" id="834">
+                            <property name="levels">
+                                <tabular-level name="month_seq" id="835">
+                                    <property name="dataType">integer</property>
+                                    <property name="columnName">month_seq</property>
+                                </tabular-level>
+                                <tabular-level name="month_code" id="838">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">month_code</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field6" id="895">
+                    <property name="measures">
+                        <tabular-measure name="shell_shop_production" id="1317">
+                            <expression name="measureExpression" type="javascript">dataSetRow["shell_shop_production"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field7" id="897">
+                    <property name="measures">
+                        <tabular-measure name="paint_to_furn_count1" id="898">
+                            <expression name="measureExpression" type="javascript">dataSetRow["paint_to_furn_count"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field8" id="899">
+                    <property name="measures">
+                        <tabular-measure name="bogie_shop_production" id="1183">
+                            <expression name="measureExpression" type="javascript">dataSetRow["bogie_shop_production"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field9" id="901">
+                    <property name="measures">
+                        <tabular-measure name="bogie_to_paint_count" id="1184">
+                            <expression name="measureExpression" type="javascript">dataSetRow["bogie_to_paint_count"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field10" id="903">
+                    <property name="measures">
+                        <tabular-measure name="coach_lowered_count1" id="1185">
+                            <expression name="measureExpression" type="javascript">dataSetRow["coach_lowered_count"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field11" id="905">
+                    <property name="measures">
+                        <tabular-measure name="coach_memo_issued_count1" id="1186">
+                            <expression name="measureExpression" type="javascript">dataSetRow["coach_memo_issued_count"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field14" id="1187">
+                    <property name="measures">
+                        <tabular-measure name="waiting_count" id="1188">
+                            <expression name="measureExpression" type="javascript">dataSetRow["waiting_count"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field15" id="1243">
+                    <property name="measures">
+                        <tabular-measure name="coaches_gate_out_count1" id="1244">
+                            <expression name="measureExpression" type="javascript">dataSetRow["coaches_gate_out_count"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">data1 Data Set</property>
+        </tabular-cube>
+    </cubes>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="4">
+            <column id="5"/>
+            <column id="6"/>
+            <column id="7"/>
+            <column id="8"/>
+            <row id="9">
+                <cell id="10">
+                    <image id="319">
+                        <property name="height">0.6041666666666666in</property>
+                        <property name="width">0.9166666666666666in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">/images/cris_logo.jpg</expression>
+                    </image>
+                </cell>
+                <cell id="11">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="337">
+                        <property name="fontSize">14pt</property>
+                        <property name="fontWeight">bold</property>
+                        <expression name="valueExpr">'Coach Production Status in '+' '+BirtStr.concat(BirtStr.left(params["Para_Year"].value,5),BirtStr.right(params["Para_Year"].value,2))</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+                <cell id="13">
+                    <grid id="348">
+                        <column id="349"/>
+                        <column id="350"/>
+                        <row id="351">
+                            <cell id="352">
+                                <data id="1389">
+                                    <property name="dataSet">crdt_ds</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">crdate</property>
+                                            <text-property name="displayName">crdate</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["crdate"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">crdate</property>
+                                </data>
+                            </cell>
+                            <cell id="353">
+                                <image id="336">
+                                    <property name="height">0.6041666666666666in</property>
+                                    <property name="width">0.84375in</property>
+                                    <property name="source">file</property>
+                                    <expression name="uri" type="constant">/images/mcf_logo.jpg</expression>
+                                </image>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+        <label id="1316">
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">ANNUAL PRODUCTION SUMMARY</text-property>
+        </label>
+        <label id="894">
+            <property name="pageBreakBefore">avoid</property>
+        </label>
+        <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="1318">
+            <property name="cube">data1 Data Cube</property>
+            <property name="measures">
+                <extended-item extensionName="MeasureView" id="1329">
+                    <property name="measure">shell_shop_production</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="1330">
+                            <property name="aggregationOnRow">Group1/month_code</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="width">0.8541666666666666in</property>
+                            <property name="content">
+                                <data id="1331">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">shell_shop_production_Group1/month_code</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="1372">
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="content">
+                                <data id="1373">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">shell_shop_production</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="1332">
+                            <property name="content">
+                                <label id="1333">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">Shell Shop Production&#13;
+</text-property>
+                                </label>
+                            </property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="1334">
+                    <property name="measure">paint_to_furn_count1</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="1335">
+                            <property name="aggregationOnRow">Group1/month_code</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="width">0.8333333333333334in</property>
+                            <property name="content">
+                                <data id="1336">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">paint_to_furn_count1_Group1/month_code</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="1374">
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="content">
+                                <data id="1375">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">paint_to_furn_count1</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="1337">
+                            <property name="content">
+                                <label id="1338">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">Shell Rec. at Fur. &#13;
+</text-property>
+                                </label>
+                            </property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="1339">
+                    <property name="measure">bogie_shop_production</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="1340">
+                            <property name="aggregationOnRow">Group1/month_code</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="width">0.78125in</property>
+                            <property name="content">
+                                <data id="1341">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">bogie_shop_production_Group1/month_code</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="1376">
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="content">
+                                <data id="1377">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">bogie_shop_production</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="1342">
+                            <property name="content">
+                                <label id="1343">
+                                    <property name="fontWeight">bold</property>
+                                    <text-property name="text">Bogie Shop Production&#13;
+</text-property>
+                                </label>
+                            </property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="1344">
+                    <property name="measure">bogie_to_paint_count</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="1345">
+                            <property name="aggregationOnRow">Group1/month_code</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="width">0.8854166666666666in</property>
+                            <property name="content">
+                                <data id="1346">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">bogie_to_paint_count_Group1/month_code</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="1378">
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="content">
+                                <data id="1379">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">bogie_to_paint_count</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="1347">
+                            <property name="content">
+                                <label id="1348">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">Bogie Rec. at Fur. &#13;
+</text-property>
+                                </label>
+                            </property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="1349">
+                    <property name="measure">coach_lowered_count1</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="1350">
+                            <property name="aggregationOnRow">Group1/month_code</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="width">0.7916666666666666in</property>
+                            <property name="content">
+                                <data id="1351">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">coach_lowered_count1_Group1/month_code</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="1380">
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="content">
+                                <data id="1381">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">coach_lowered_count1</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="1352">
+                            <property name="content">
+                                <label id="1353">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">Coaches Lowered&#13;
+</text-property>
+                                </label>
+                            </property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="1354">
+                    <property name="measure">coach_memo_issued_count1</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="1355">
+                            <property name="aggregationOnRow">Group1/month_code</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="width">0.71875in</property>
+                            <property name="content">
+                                <data id="1356">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">coach_memo_issued_count1_Group1/month_code</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="1382">
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="content">
+                                <data id="1383">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">coach_memo_issued_count1</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="1357">
+                            <property name="content">
+                                <label id="1358">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text"> Memo Issued&#13;
+</text-property>
+                                </label>
+                            </property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="1359">
+                    <property name="measure">waiting_count</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="1360">
+                            <property name="aggregationOnRow">Group1/month_code</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="width">0.8645833333333334in</property>
+                            <property name="content">
+                                <data id="1361">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">waiting_count_Group1/month_code</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="1384">
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="content">
+                                <data id="1385">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="borderBottomStyle">none</property>
+                                    <property name="borderLeftStyle">none</property>
+                                    <property name="borderRightStyle">none</property>
+                                    <property name="borderTopStyle">none</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">waiting_count</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="1362">
+                            <property name="content">
+                                <label id="1363">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text"> Wtng for gate out &#13;
+</text-property>
+                                </label>
+                            </property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="1364">
+                    <property name="measure">coaches_gate_out_count1</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="1365">
+                            <property name="aggregationOnRow">Group1/month_code</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="width">0.7916666666666666in</property>
+                            <property name="content">
+                                <data id="1366">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">coaches_gate_out_count1_Group1/month_code</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="1386">
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="content">
+                                <data id="1387">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">coaches_gate_out_count1</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="1367">
+                            <property name="content">
+                                <label id="1368">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text"> Gate out&#13;
+</text-property>
+                                </label>
+                            </property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="rows">
+                <extended-item extensionName="CrosstabView" id="1320">
+                    <property name="grandTotal">
+                        <extended-item extensionName="CrosstabCell" id="1371">
+                            <property name="content">
+                                <label id="1388">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">Total</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="1321">
+                            <property name="dimension">Group1</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View3" id="1322">
+                                    <property name="level">Group1/month_seq</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1323">
+                                            <property name="content">
+                                                <data name="month_seq1" id="1324">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">month_seq</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                            <property name="width">0.6666666666666666in</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View4" id="1325">
+                                    <property name="level">Group1/month_code</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1326">
+                                            <property name="content">
+                                                <data name="month_code1" id="1328">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">month_code</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                            <property name="width">0.7604166666666666in</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="1319">
+                    <property name="content">
+                        <label id="1369">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">S No</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1327">
+                    <property name="content">
+                        <label id="1370">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Month</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+            </property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">medium</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">medium</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">medium</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">medium</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">month_seq</property>
+                    <expression name="expression">dimension["Group1"]["month_seq"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">month_code</property>
+                    <expression name="expression">dimension["Group1"]["month_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">shell_shop_production_Group1/month_code</property>
+                    <expression name="expression">measure["shell_shop_production"]</expression>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group1/month_code</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">paint_to_furn_count1_Group1/month_code</property>
+                    <expression name="expression">measure["paint_to_furn_count1"]</expression>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group1/month_code</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">bogie_shop_production_Group1/month_code</property>
+                    <expression name="expression">measure["bogie_shop_production"]</expression>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group1/month_code</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">bogie_to_paint_count_Group1/month_code</property>
+                    <expression name="expression">measure["bogie_to_paint_count"]</expression>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group1/month_code</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">coach_lowered_count1_Group1/month_code</property>
+                    <expression name="expression">measure["coach_lowered_count1"]</expression>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group1/month_code</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">coach_memo_issued_count1_Group1/month_code</property>
+                    <expression name="expression">measure["coach_memo_issued_count1"]</expression>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group1/month_code</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">waiting_count_Group1/month_code</property>
+                    <expression name="expression">measure["waiting_count"]</expression>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group1/month_code</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">coaches_gate_out_count1_Group1/month_code</property>
+                    <expression name="expression">measure["coaches_gate_out_count1"]</expression>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group1/month_code</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">shell_shop_production</property>
+                    <expression name="expression">measure["shell_shop_production"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">sum</property>
+                </structure>
+                <structure>
+                    <property name="name">paint_to_furn_count1</property>
+                    <expression name="expression">measure["paint_to_furn_count1"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">sum</property>
+                </structure>
+                <structure>
+                    <property name="name">bogie_shop_production</property>
+                    <expression name="expression">measure["bogie_shop_production"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">sum</property>
+                </structure>
+                <structure>
+                    <property name="name">bogie_to_paint_count</property>
+                    <expression name="expression">measure["bogie_to_paint_count"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">sum</property>
+                </structure>
+                <structure>
+                    <property name="name">coach_lowered_count1</property>
+                    <expression name="expression">measure["coach_lowered_count1"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">sum</property>
+                </structure>
+                <structure>
+                    <property name="name">coach_memo_issued_count1</property>
+                    <expression name="expression">measure["coach_memo_issued_count1"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">sum</property>
+                </structure>
+                <structure>
+                    <property name="name">waiting_count</property>
+                    <expression name="expression">measure["waiting_count"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">sum</property>
+                </structure>
+                <structure>
+                    <property name="name">coaches_gate_out_count1</property>
+                    <expression name="expression">measure["coaches_gate_out_count1"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">sum</property>
+                </structure>
+            </list-property>
+        </extended-item>
+        <label id="1391"/>
+        <label id="927">
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">MONTHLY PRODUCTION</text-property>
+        </label>
+        <label id="1390"/>
+        <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="1009">
+            <property name="cube">monthycount Data Cube</property>
+            <property name="measures">
+                <extended-item extensionName="MeasureView" id="1024">
+                    <property name="measure">shell_production_count</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="1025">
+                            <property name="aggregationOnRow">Group/asset_subtype</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="width">0.84375in</property>
+                            <property name="content">
+                                <data id="1026">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">shell_production_count_Group/asset_subtype</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="1027">
+                            <property name="content">
+                                <label id="1028">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">Shell Shop Production&#13;
+</text-property>
+                                </label>
+                            </property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="1029">
+                    <property name="measure">paint_to_furn_count</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="1030">
+                            <property name="aggregationOnRow">Group/asset_subtype</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="width">0.71875in</property>
+                            <property name="content">
+                                <data id="1031">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">paint_to_furn_count_Group/asset_subtype</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="1032">
+                            <property name="content">
+                                <label id="1033">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">Shell Rec. at Fur. &#13;
+</text-property>
+                                </label>
+                            </property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="1034">
+                    <property name="measure">bogie_production_count</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="1035">
+                            <property name="aggregationOnRow">Group/asset_subtype</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="width">0.78125in</property>
+                            <property name="content">
+                                <data id="1036">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">bogie_production_count_Group/asset_subtype</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="1037">
+                            <property name="content">
+                                <label id="1038">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <text-property name="text">Bogie Shop Production&#13;
+</text-property>
+                                </label>
+                            </property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="1039">
+                    <property name="measure">bogie_to_furn_count</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="1040">
+                            <property name="aggregationOnRow">Group/asset_subtype</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="width">0.71875in</property>
+                            <property name="content">
+                                <data id="1041">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">bogie_to_furn_count_Group/asset_subtype</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="1042">
+                            <property name="content">
+                                <label id="1043">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">Bogie Rec. at Fur. &#13;
+</text-property>
+                                </label>
+                            </property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="1044">
+                    <property name="measure">coach_lowered_count</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="1045">
+                            <property name="aggregationOnRow">Group/asset_subtype</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="width">0.71875in</property>
+                            <property name="content">
+                                <data id="1046">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">coach_lowered_count_Group/asset_subtype</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="1047">
+                            <property name="content">
+                                <label id="1048">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">Coaches Lowered&#13;
+</text-property>
+                                </label>
+                            </property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="1049">
+                    <property name="measure">coach_memo_issued_count</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="1050">
+                            <property name="aggregationOnRow">Group/asset_subtype</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="width">0.71875in</property>
+                            <property name="content">
+                                <data id="1051">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">coach_memo_issued_count_Group/asset_subtype</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="1052">
+                            <property name="content">
+                                <label id="1053">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">Memo Issued&#13;
+</text-property>
+                                </label>
+                            </property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="1054">
+                    <property name="measure">waiting_for_dispacth_count</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="1055">
+                            <property name="aggregationOnRow">Group/asset_subtype</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="width">0.71875in</property>
+                            <property name="content">
+                                <data id="1056">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">waiting_for_dispacth_count_Group/asset_subtype</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="1057">
+                            <property name="content">
+                                <label id="1058">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text"> Wtng for gate out &#13;
+</text-property>
+                                </label>
+                            </property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="1059">
+                    <property name="measure">coaches_gate_out_count</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="1060">
+                            <property name="aggregationOnRow">Group/asset_subtype</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                            <property name="width">0.71875in</property>
+                            <property name="content">
+                                <data id="1061">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">coaches_gate_out_count_Group/asset_subtype</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="1062">
+                            <property name="content">
+                                <label id="1063">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text"> Gate out&#13;
+</text-property>
+                                </label>
+                            </property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">1px</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">1px</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="rows">
+                <extended-item extensionName="CrosstabView" id="1011">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="1012">
+                            <property name="dimension">Group</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View" id="1013">
+                                    <property name="level">Group/month_seq</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1014">
+                                            <property name="content">
+                                                <data name="month_seq" id="1015">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">month_seq</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                            <property name="width">0.6041666666666666in</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View1" id="1016">
+                                    <property name="level">Group/month_code</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1017">
+                                            <property name="content">
+                                                <data name="month_code" id="1019">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">month_code</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                            <property name="width">0.5729166666666666in</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View2" id="1020">
+                                    <property name="level">Group/asset_subtype</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1021">
+                                            <property name="content">
+                                                <data name="asset_subtype" id="1023">
+                                                    <property name="textAlign">left</property>
+                                                    <property name="resultSetColumn">asset_subtype</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                            <property name="width">0.8333333333333334in</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="1010">
+                    <property name="content">
+                        <label id="1064">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">S No</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1018">
+                    <property name="content">
+                        <label id="1065">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Month</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1022">
+                    <property name="content">
+                        <label id="1066">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Coach </text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+            </property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">medium</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">medium</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">medium</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">medium</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">month_seq</property>
+                    <expression name="expression">dimension["Group"]["month_seq"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">month_code</property>
+                    <expression name="expression">dimension["Group"]["month_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">asset_subtype</property>
+                    <expression name="expression">dimension["Group"]["asset_subtype"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">shell_production_count_Group/asset_subtype</property>
+                    <expression name="expression">measure["shell_production_count"]</expression>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/asset_subtype</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">paint_to_furn_count_Group/asset_subtype</property>
+                    <expression name="expression">measure["paint_to_furn_count"]</expression>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/asset_subtype</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">bogie_production_count_Group/asset_subtype</property>
+                    <expression name="expression">measure["bogie_production_count"]</expression>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/asset_subtype</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">bogie_to_furn_count_Group/asset_subtype</property>
+                    <expression name="expression">measure["bogie_to_furn_count"]</expression>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/asset_subtype</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">coach_lowered_count_Group/asset_subtype</property>
+                    <expression name="expression">measure["coach_lowered_count"]</expression>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/asset_subtype</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">coach_memo_issued_count_Group/asset_subtype</property>
+                    <expression name="expression">measure["coach_memo_issued_count"]</expression>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/asset_subtype</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">waiting_for_dispacth_count_Group/asset_subtype</property>
+                    <expression name="expression">measure["waiting_for_dispacth_count"]</expression>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/asset_subtype</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">coaches_gate_out_count_Group/asset_subtype</property>
+                    <expression name="expression">measure["coaches_gate_out_count"]</expression>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/asset_subtype</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+            </list-property>
+        </extended-item>
+    </body>
+</report>

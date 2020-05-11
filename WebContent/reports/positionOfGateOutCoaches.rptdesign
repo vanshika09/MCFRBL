@@ -1,0 +1,965 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">143</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">143</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">143</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="para_year" id="229">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="142">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/MCFRBL</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cG9zdGdyZXNz</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="coaachData" id="143">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">furno</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">furno</text-property>
+                    <text-property name="heading">furno</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">coachtype</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">coachtype</text-property>
+                    <text-property name="heading">coachtype</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">coachnumber</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">coachnumber</text-property>
+                    <text-property name="heading">coachnumber</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">railway</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">railway</text-property>
+                    <text-property name="heading">railway</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">dispatchdate</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">dispatchdate</text-property>
+                    <text-property name="heading">dispatchdate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">dispatchedto</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">dispatchedto</text-property>
+                    <text-property name="heading">dispatchedto</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">gateoutdate</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">gateoutdate</text-property>
+                    <text-property name="heading">gateoutdate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">remarks</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">remarks</text-property>
+                    <text-property name="heading">remarks</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">dispatch_memo_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">dispatch_memo_date</text-property>
+                    <text-property name="heading">dispatch_memo_date</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">para_year</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">furno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">coachtype</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">coachnumber</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">railway</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">dispatchdate</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">dispatchedto</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">gateoutdate</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">remarks</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">dispatch_memo_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">furno</property>
+                    <property name="nativeName">furno</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">coachtype</property>
+                    <property name="nativeName">coachtype</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">coachnumber</property>
+                    <property name="nativeName">coachnumber</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">railway</property>
+                    <property name="nativeName">railway</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">dispatchdate</property>
+                    <property name="nativeName">dispatchdate</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">dispatchedto</property>
+                    <property name="nativeName">dispatchedto</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">gateoutdate</property>
+                    <property name="nativeName">gateoutdate</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">remarks</property>
+                    <property name="nativeName">remarks</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">dispatch_memo_date</property>
+                    <property name="nativeName">dispatch_memo_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select p.furnishing_no as furNo,
+ f.coach_type as coachType,
+ f.coach_number as coachNumber,
+ f.dispatch_rly as railway,
+f.dispatch_memo_date as dispatchDate,
+ f.dispatch_div as dispatchedTo,
+ f.gate_out_date as gateOutDate,
+ f.remarks as remarks,
+ f.dispatch_memo_date from fnyr_mon_start_end_date_v A, furnishing_tran f inner join paint_tran p on f.paint_asset_id=p.paint_asset_id 
+ where crnt_fin_year(dispatch_memo_date)=A.fnyr
+ and crnt_fin_year(gate_out_date)=A.fnyr and A.fnyr=?
+ group by p.furnishing_no,f.coach_type,f.coach_number,f.dispatch_rly,f.dispatch_div,f.dispatch_memo_date,f.gate_out_date,f.remarks;]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>furno</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>furno</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>furno</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>coachtype</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>coachtype</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>coachtype</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>coachnumber</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>coachnumber</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>coachnumber</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>railway</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>6</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>railway</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>railway</design:label>
+            <design:formattingHints>
+              <design:displaySize>6</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>dispatchdate</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>dispatchdate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>dispatchdate</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>dispatchedto</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>dispatchedto</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>dispatchedto</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>gateoutdate</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>gateoutdate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>gateoutdate</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>remarks</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>500</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>remarks</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>remarks</design:label>
+            <design:formattingHints>
+              <design:displaySize>500</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube" id="163">
+            <property name="dimensions">
+                <tabular-dimension name="Group" id="164">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="165">
+                            <property name="levels">
+                                <tabular-level name="furno" id="166">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">furno</property>
+                                </tabular-level>
+                                <tabular-level name="coachnumber" id="169">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">coachnumber</property>
+                                </tabular-level>
+                                <tabular-level name="coachtype" id="170">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">coachtype</property>
+                                </tabular-level>
+                                <tabular-level name="dispatch_memo_date" id="171">
+                                    <property name="dataType">date</property>
+                                    <property name="columnName">dispatch_memo_date</property>
+                                </tabular-level>
+                                <tabular-level name="dispatchdate" id="172">
+                                    <property name="dataType">date</property>
+                                    <property name="columnName">dispatchdate</property>
+                                </tabular-level>
+                                <tabular-level name="gateoutdate" id="176">
+                                    <property name="dataType">date</property>
+                                    <property name="columnName">gateoutdate</property>
+                                </tabular-level>
+                                <tabular-level name="dispatchedto" id="173">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">dispatchedto</property>
+                                </tabular-level>
+                                <tabular-level name="remarks" id="180">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">remarks</property>
+                                </tabular-level>
+                                <tabular-level name="railway" id="177">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">railway</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field" id="167"/>
+                <tabular-measure-group name="Summary Field1" id="174"/>
+                <tabular-measure-group name="Summary Field2" id="178"/>
+            </property>
+            <property name="dataSet">coaachData</property>
+        </tabular-cube>
+    </cubes>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="4">
+            <property name="textAlign">justify</property>
+            <property name="width">7.916666666666667in</property>
+            <column id="13">
+                <property name="width">0.8in</property>
+            </column>
+            <column id="5">
+                <property name="width">6in</property>
+            </column>
+            <column id="11">
+                <property name="width">1.125in</property>
+            </column>
+            <row id="6">
+                <cell id="12">
+                    <property name="fontSize">9pt</property>
+                    <property name="verticalAlign">top</property>
+                    <image id="14">
+                        <property name="height">0.5520833333333334in</property>
+                        <property name="width">0.59375in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">/images/cris_logo.jpg</expression>
+                    </image>
+                </cell>
+                <cell id="7">
+                    <label id="9">
+                        <property name="fontSize">18pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">MODERN COACH FACTORY,RAEBARELI</text-property>
+                    </label>
+                </cell>
+                <cell id="10">
+                    <property name="textAlign">right</property>
+                    <image id="15">
+                        <property name="height">0.5520833333333334in</property>
+                        <property name="width">0.53125in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">/images/mcf_logo.jpg</expression>
+                    </image>
+                </cell>
+            </row>
+        </grid>
+        <text-data id="230">
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <expression name="valueExpr">'POSITION OF DISPATCH COACH IN YEAR '+BirtStr.concat(BirtStr.left(params["para_year"].value,5),BirtStr.right(params["para_year"].value,2))</expression>
+            <property name="contentType">html</property>
+        </text-data>
+        <text-data id="231">
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <expression name="valueExpr">'April '+BirtStr.left(params["para_year"].value,4)</expression>
+            <property name="contentType">html</property>
+        </text-data>
+        <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="181">
+            <property name="cube">Data Cube</property>
+            <property name="rows">
+                <extended-item extensionName="CrosstabView" id="183">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="184">
+                            <property name="dimension">Group</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View" id="185">
+                                    <property name="level">Group/furno</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="186">
+                                            <property name="content">
+                                                <data name="furno" id="187">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">furno</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View1" id="188">
+                                    <property name="level">Group/coachnumber</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="189">
+                                            <property name="content">
+                                                <data name="coachnumber" id="191">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">coachnumber</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View2" id="192">
+                                    <property name="level">Group/coachtype</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="193">
+                                            <property name="content">
+                                                <data name="coachtype" id="195">
+                                                    <property name="resultSetColumn">coachtype</property>
+                                                </data>
+                                            </property>
+                                            <property name="textAlign">center</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View3" id="196">
+                                    <property name="level">Group/dispatch_memo_date</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="197">
+                                            <property name="content">
+                                                <data name="dispatch_memo_date" id="199">
+                                                    <property name="backgroundColor">white</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">dispatch_memo_date</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View4" id="200">
+                                    <property name="level">Group/dispatchdate</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="201">
+                                            <property name="content">
+                                                <data name="dispatchdate" id="203">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">dispatchdate</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">none</property>
+                                            <property name="borderRightStyle">none</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View5" id="204">
+                                    <property name="level">Group/gateoutdate</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="205">
+                                            <property name="content">
+                                                <data name="gateoutdate" id="207">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">gateoutdate</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View6" id="208">
+                                    <property name="level">Group/dispatchedto</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="209">
+                                            <property name="content">
+                                                <data name="dispatchedto" id="211">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">dispatchedto</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View7" id="212">
+                                    <property name="level">Group/remarks</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="213">
+                                            <property name="content">
+                                                <data name="railway" id="219">
+                                                    <property name="resultSetColumn">railway</property>
+                                                </data>
+                                            </property>
+                                            <property name="textAlign">center</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View8" id="216">
+                                    <property name="level">Group/railway</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="217">
+                                            <property name="content">
+                                                <data name="remarks" id="215">
+                                                    <property name="resultSetColumn">remarks</property>
+                                                </data>
+                                            </property>
+                                            <property name="textAlign">center</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="182">
+                    <property name="content">
+                        <label id="220">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Furnishing No.</text-property>
+                        </label>
+                    </property>
+                    <property name="verticalAlign">top</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="190">
+                    <property name="content">
+                        <label id="221">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Coach Number</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="194">
+                    <property name="content">
+                        <label id="222">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Coach Type</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="198">
+                    <property name="content">
+                        <label id="223">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Memo Issued</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="202">
+                    <property name="content">
+                        <label id="224">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Dispatch Date</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="206">
+                    <property name="content">
+                        <label id="225">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Gate Out Date</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="210">
+                    <property name="content">
+                        <label id="226">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Dispatched To</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="214">
+                    <property name="content">
+                        <label id="228">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Railway</text-property>
+                        </label>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="218">
+                    <property name="content">
+                        <label id="227">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Remarks</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+            </property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">furno</property>
+                    <expression name="expression">dimension["Group"]["furno"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">coachnumber</property>
+                    <expression name="expression">dimension["Group"]["coachnumber"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">coachtype</property>
+                    <expression name="expression">dimension["Group"]["coachtype"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">dispatch_memo_date</property>
+                    <expression name="expression">dimension["Group"]["dispatch_memo_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">dispatchdate</property>
+                    <expression name="expression">dimension["Group"]["dispatchdate"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">gateoutdate</property>
+                    <expression name="expression">dimension["Group"]["gateoutdate"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">dispatchedto</property>
+                    <expression name="expression">dimension["Group"]["dispatchedto"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">remarks</property>
+                    <expression name="expression">dimension["Group"]["remarks"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">railway</property>
+                    <expression name="expression">dimension["Group"]["railway"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+        </extended-item>
+    </body>
+</report>

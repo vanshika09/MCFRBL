@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12 Mar, 2020 1:13:51 PM by Hibernate Tools 4.0.1.Final -->
+<hibernate-mapping>
+    <class name="beans.CoachMemoDispatchView" table="coach_memo_dispatch_view">
+        <id name="dispatchMemoId" type="integer">
+            <column name="dispatch_memo_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="docno" type="text">
+            <column name="docno"/>
+        </property>
+        <property name="dispatchMemoDate" type="date">
+            <column name="dispatch_memo_date"/>
+        </property>
+       <property name="dispatchMemoFileNo" type="string">
+            <column name="dispatch_memo_file_no"/>
+        </property>
+        <property name="dispatchMemoNo" type="string">
+            <column name="dispatch_memo_no"/>
+        </property>
+        <property name="coachno" type="string">
+            <column name="coachno"/>
+        </property>
+        <property name="coachtype" type="string">
+            <column name="coachtype"/>
+        </property>
+        <property name="shellno" type="string">
+            <column name="shellno"/>
+        </property>
+        <property name="furno" type="string">
+            <column name="furno"/>
+        </property>
+        
+    </class>
+</hibernate-mapping>

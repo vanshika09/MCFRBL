@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.RollingStockCertificate" table="rolling_stock_certificate">
+        <id name="furnishingAssetId" type="int">
+            <column name="furnishing_asset_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="rscDocNo" type="string">
+            <column name="rsc_doc_no" length="100"/>
+        </property>
+         <property name="rscRevNo" type="string">
+            <column name="rsc_rev_no" length="10"/>
+        </property>
+         <property name="docDate" type="date">
+            <column name="doc_date"/>
+        </property>
+         <property name="rscNo" type="string">
+            <column name="rsc_no" length="100"/>
+        </property>
+        <property name="orderNo" type="string">
+            <column name="order_no" length="100"/>
+        </property>     
+       <property name="rscModification" type="string">
+            <column name="rsc_modification" length="500"/>
+        </property>     
+        <property name="rscDeviation" type="string">
+            <column name="rsc_deviation" length="500"/>
+        </property>     
+    </class>
+</hibernate-mapping>

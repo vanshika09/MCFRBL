@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.TrialGenerationInRsc" table="trial_generation_in_rsc">
+       
+       <id name="trialGenerationItemId" type="java.lang.Integer">
+			<column name="trial_generation_item_id"></column>
+			<generator class="increment"></generator>
+		</id>
+         <property name="furnishingAssetId" type="integer">
+                <column name="furnishing_asset_id"/>
+            </property>
+            <property name="itemParticulars" type="string">
+                <column name="item_particulars" length="100" />
+            </property> 
+            <property name="frequency" type="string">
+                <column name="frequency" length="25" />
+            </property>
+            <property name="fromDate" type="date">
+                <column name="from_date"/>
+            </property> 
+            <property name="toDate" type="date">
+                <column name="to_date"/>
+            </property> 
+        
+    </class>
+</hibernate-mapping>

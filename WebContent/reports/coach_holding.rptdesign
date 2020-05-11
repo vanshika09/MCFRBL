@@ -1,0 +1,1658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <list-property name="userProperties">
+        <structure>
+            <property name="name">Data Cube furshop.furshop Data Set.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube furshop.furshop Data Set.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+    </list-property>
+    <property name="Data Cube furshop.furshop Data Set.x">135</property>
+    <property name="Data Cube furshop.furshop Data Set.y">80</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">fixed layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/MCFRBL</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cG9zdGdyZXNz</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="date Data Set" id="770">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">crdate</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">crdate</text-property>
+                    <text-property name="heading">crdate</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">crdate</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">crdate</property>
+                    <property name="nativeName">crdate</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select 'Coach Holding Position as on: '||to_char(public.fin_tday_wday_v.prev_date::date,'dd-mm-yyyy') crdate
+from public.fin_tday_wday_v
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>crdate</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>crdate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>crdate</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="new Data Set" id="979">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">asset_subtype_description</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">asset_subtype_description</text-property>
+                    <text-property name="heading">asset_subtype_description</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furnoapp</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">furnoapp</text-property>
+                    <text-property name="heading">furnoapp</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">countapp</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">countapp</text-property>
+                    <text-property name="heading">countapp</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furnofurshop</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">furnofurshop</text-property>
+                    <text-property name="heading">furnofurshop</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">countfurshop</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">countfurshop</text-property>
+                    <text-property name="heading">countfurshop</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furnofuryard</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">furnofuryard</text-property>
+                    <text-property name="heading">furnofuryard</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">countfuryard</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">countfuryard</text-property>
+                    <text-property name="heading">countfuryard</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furnopaint</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">furnopaint</text-property>
+                    <text-property name="heading">furnopaint</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">countpaint</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">countpaint</text-property>
+                    <text-property name="heading">countpaint</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furnoshell</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">furnoshell</text-property>
+                    <text-property name="heading">furnoshell</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">countshell</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">countshell</text-property>
+                    <text-property name="heading">countshell</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furnoshellready</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">furnoshellready</text-property>
+                    <text-property name="heading">furnoshellready</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">countshellready</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">countshellready</text-property>
+                    <text-property name="heading">countshellready</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furnocoachgateout</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">furnocoachgateout</text-property>
+                    <text-property name="heading">furnocoachgateout</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">countcoachgateout</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">countcoachgateout</text-property>
+                    <text-property name="heading">countcoachgateout</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furnowaitapp</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">furnowaitapp</text-property>
+                    <text-property name="heading">furnowaitapp</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">countwaitapp</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">countwaitapp</text-property>
+                    <text-property name="heading">countwaitapp</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furnocoachoturn</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">furnocoachoturn</text-property>
+                    <text-property name="heading">furnocoachoturn</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">countcoachoturn</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">countcoachoturn</text-property>
+                    <text-property name="heading">countcoachoturn</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">asset_subtype_description</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">furnoapp</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">countapp</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">furnofurshop</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">countfurshop</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">furnofuryard</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">countfuryard</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">furnopaint</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">countpaint</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">furnoshell</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">countshell</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">furnoshellready</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">countshellready</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">furnocoachgateout</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">countcoachgateout</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">furnowaitapp</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">countwaitapp</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">furnocoachoturn</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">countcoachoturn</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">asset_subtype_description</property>
+                    <property name="nativeName">asset_subtype_description</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">furnoapp</property>
+                    <property name="nativeName">furnoapp</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">countapp</property>
+                    <property name="nativeName">countapp</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">furnofurshop</property>
+                    <property name="nativeName">furnofurshop</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">countfurshop</property>
+                    <property name="nativeName">countfurshop</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">furnofuryard</property>
+                    <property name="nativeName">furnofuryard</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">countfuryard</property>
+                    <property name="nativeName">countfuryard</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">furnopaint</property>
+                    <property name="nativeName">furnopaint</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">countpaint</property>
+                    <property name="nativeName">countpaint</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">furnoshell</property>
+                    <property name="nativeName">furnoshell</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">countshell</property>
+                    <property name="nativeName">countshell</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">furnoshellready</property>
+                    <property name="nativeName">furnoshellready</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">countshellready</property>
+                    <property name="nativeName">countshellready</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">furnocoachgateout</property>
+                    <property name="nativeName">furnocoachgateout</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">countcoachgateout</property>
+                    <property name="nativeName">countcoachgateout</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">furnowaitapp</property>
+                    <property name="nativeName">furnowaitapp</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">countwaitapp</property>
+                    <property name="nativeName">countwaitapp</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">furnocoachoturn</property>
+                    <property name="nativeName">furnocoachoturn</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">countcoachoturn</property>
+                    <property name="nativeName">countcoachoturn</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT *
+FROM public.coach_holding_v_shop;]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>asset_subtype_description</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>150</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>asset_subtype_description</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>asset_subtype_description</design:label>
+            <design:formattingHints>
+              <design:displaySize>150</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>furnoapp</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>furnoapp</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>furnoapp</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>countapp</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>countapp</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>countapp</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>furnofurshop</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>furnofurshop</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>furnofurshop</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>countfurshop</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>countfurshop</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>countfurshop</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>furnofuryard</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>furnofuryard</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>furnofuryard</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>countfuryard</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>countfuryard</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>countfuryard</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>furnopaint</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>furnopaint</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>furnopaint</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>countpaint</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>countpaint</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>countpaint</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>furnoshell</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>furnoshell</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>furnoshell</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>countshell</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>countshell</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>countshell</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="total Data Set" id="1305">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">app</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">app</text-property>
+                    <text-property name="heading">app</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furshop</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">furshop</text-property>
+                    <text-property name="heading">furshop</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furyard</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">furyard</text-property>
+                    <text-property name="heading">furyard</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">paint</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">paint</text-property>
+                    <text-property name="heading">paint</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">shell</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">shell</text-property>
+                    <text-property name="heading">shell</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">shellready</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">shellready</text-property>
+                    <text-property name="heading">shellready</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">coachgateout</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">coachgateout</text-property>
+                    <text-property name="heading">coachgateout</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">waitapp</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">waitapp</text-property>
+                    <text-property name="heading">waitapp</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">countcoachoturn</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">countcoachoturn</text-property>
+                    <text-property name="heading">countcoachoturn</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">app</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">furshop</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">furyard</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">paint</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">shell</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">shellready</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">coachgateout</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">waitapp</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">countcoachoturn</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">app</property>
+                    <property name="nativeName">app</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">furshop</property>
+                    <property name="nativeName">furshop</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">furyard</property>
+                    <property name="nativeName">furyard</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">paint</property>
+                    <property name="nativeName">paint</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">shell</property>
+                    <property name="nativeName">shell</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">shellready</property>
+                    <property name="nativeName">shellready</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">coachgateout</property>
+                    <property name="nativeName">coachgateout</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">waitapp</property>
+                    <property name="nativeName">waitapp</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">countcoachoturn</property>
+                    <property name="nativeName">countcoachoturn</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select sum(countapp) as app,sum(countfurshop) as furshop,
+sum(countfuryard) as furyard,sum(countpaint) as paint,sum(countshell) as shell,sum(countshellready)
+as shellready,sum(countcoachgateout) as coachgateout,sum(countwaitapp) as waitapp,
+sum(countcoachoturn) as countcoachoturn
+from coach_holding_v_shop;]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>app</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>app</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>app</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>furshop</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>furshop</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>furshop</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>furyard</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>furyard</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>furyard</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>paint</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>paint</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>paint</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>shell</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>shell</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>shell</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>shellready</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>shellready</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>shellready</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>coachgateout</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>coachgateout</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>coachgateout</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>waitapp</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>waitapp</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>waitapp</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>countcoachoturn</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>countcoachoturn</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>countcoachoturn</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube1" id="1306">
+            <property name="dimensions">
+                <tabular-dimension name="Group" id="1307">
+                    <property name="defaultHierarchy">NewTabularHierarchy1</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy1" id="1308">
+                            <property name="levels">
+                                <tabular-level name="asset_subtype_description" id="1309">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">asset_subtype_description</property>
+                                </tabular-level>
+                                <tabular-level name="furnofurshop" id="1312">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">furnofurshop</property>
+                                </tabular-level>
+                                <tabular-level name="furnofuryard" id="1313">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">furnofuryard</property>
+                                </tabular-level>
+                                <tabular-level name="furnopaint" id="1314">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">furnopaint</property>
+                                </tabular-level>
+                                <tabular-level name="furnoapp" id="1315">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">furnoapp</property>
+                                </tabular-level>
+                                <tabular-level name="furnowaitapp" id="1316">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">furnowaitapp</property>
+                                </tabular-level>
+                                <tabular-level name="furnoshell" id="1317">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">furnoshell</property>
+                                </tabular-level>
+                                <tabular-level name="furnoshellready" id="1318">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">furnoshellready</property>
+                                </tabular-level>
+                                <tabular-level name="furnocoachoturn" id="1321">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">furnocoachoturn</property>
+                                </tabular-level>
+                                <tabular-level name="furnocoachgateout" id="1322">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">furnocoachgateout</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field18" id="1310"/>
+                <tabular-measure-group name="Summary Field19" id="1319"/>
+            </property>
+            <property name="dataSet">new Data Set</property>
+        </tabular-cube>
+    </cubes>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a3</property>
+            <property name="orientation">landscape</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="756">
+            <property name="height">0.65625in</property>
+            <column id="757"/>
+            <column id="758"/>
+            <column id="759"/>
+            <column id="760"/>
+            <column id="761"/>
+            <row id="762">
+                <property name="height">0.65625in</property>
+                <cell id="763">
+                    <image id="768">
+                        <property name="height">0.5416666666666666in</property>
+                        <property name="width">0.5833333333333334in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">/images/cris_logo.jpg</expression>
+                    </image>
+                </cell>
+                <cell id="764">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <data id="771">
+                        <property name="fontSize">14pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <property name="dataSet">date Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">crdate</property>
+                                <text-property name="displayName">crdate</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["crdate"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">crdate</property>
+                    </data>
+                </cell>
+                <cell id="767">
+                    <image id="769">
+                        <property name="height">0.53125in</property>
+                        <property name="width">0.625in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">/images/mcf_logo.jpg</expression>
+                    </image>
+                </cell>
+            </row>
+        </grid>
+        <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="1440">
+            <property name="cube">Data Cube1</property>
+            <property name="columns">
+                <extended-item extensionName="CrosstabView" id="1442">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="1443">
+                            <property name="dimension">Group</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View9" id="1444">
+                                    <property name="level">Group/asset_subtype_description</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1445">
+                                            <property name="content">
+                                                <data name="asset_subtype_description1" id="1446">
+                                                    <property name="fontWeight">bold</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">asset_subtype_description</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View10" id="1448">
+                                    <property name="level">Group/furnofurshop</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1449">
+                                            <property name="content">
+                                                <data name="furnofurshop" id="1451">
+                                                    <property name="fontWeight">normal</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">furnofurshop</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View11" id="1453">
+                                    <property name="level">Group/furnofuryard</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1454">
+                                            <property name="content">
+                                                <data name="furnofuryard" id="1456">
+                                                    <property name="fontWeight">normal</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">furnofuryard</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View12" id="1458">
+                                    <property name="level">Group/furnopaint</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1459">
+                                            <property name="content">
+                                                <data name="furnopaint" id="1461">
+                                                    <property name="fontWeight">normal</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">furnopaint</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View13" id="1463">
+                                    <property name="level">Group/furnoapp</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1464">
+                                            <property name="content">
+                                                <data name="furnoapp" id="1466">
+                                                    <property name="fontWeight">normal</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">furnoapp</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View14" id="1468">
+                                    <property name="level">Group/furnowaitapp</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1469">
+                                            <property name="content">
+                                                <data name="furnowaitapp" id="1471">
+                                                    <property name="fontWeight">normal</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">furnowaitapp</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View15" id="1473">
+                                    <property name="level">Group/furnoshell</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1474">
+                                            <property name="content">
+                                                <data name="furnoshell" id="1476">
+                                                    <property name="fontWeight">normal</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">furnoshell</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View16" id="1478">
+                                    <property name="level">Group/furnoshellready</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1479">
+                                            <property name="content">
+                                                <data name="furnoshellready" id="1481">
+                                                    <property name="fontWeight">normal</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">furnoshellready</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View17" id="1483">
+                                    <property name="level">Group/furnocoachoturn</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1484">
+                                            <property name="content">
+                                                <data name="furnocoachoturn" id="1486">
+                                                    <property name="fontWeight">normal</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">furnocoachoturn</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View18" id="1488">
+                                    <property name="level">Group/furnocoachgateout</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="1489">
+                                            <property name="content">
+                                                <data name="furnocoachgateout" id="1491">
+                                                    <property name="fontWeight">normal</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">furnocoachgateout</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">1px</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">1px</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">1px</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="1441">
+                    <property name="content">
+                        <label id="1447">
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Shop/Coaches</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1450">
+                    <property name="content">
+                        <label id="1452">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Furnishing Shop</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1455">
+                    <property name="content">
+                        <label id="1457">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Furnishing Yard</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1460">
+                    <property name="content">
+                        <label id="1462">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Paint shop</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1465">
+                    <property name="content">
+                        <label id="1467">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">App Shop</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1470">
+                    <property name="content">
+                        <label id="1472">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Awaiting App Shop</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1475">
+                    <property name="content">
+                        <label id="1477">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Shell Shop</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1480">
+                    <property name="content">
+                        <label id="1482">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Ready Coaches in Shell Shop</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1485">
+                    <property name="content">
+                        <label id="1487">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Coach O/turn</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="1490">
+                    <property name="content">
+                        <label id="1492">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Gate out Coach</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                </extended-item>
+            </property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">asset_subtype_description</property>
+                    <expression name="expression">dimension["Group"]["asset_subtype_description"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">furnofurshop</property>
+                    <expression name="expression">dimension["Group"]["furnofurshop"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">furnofuryard</property>
+                    <expression name="expression">dimension["Group"]["furnofuryard"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">furnopaint</property>
+                    <expression name="expression">dimension["Group"]["furnopaint"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">furnoapp</property>
+                    <expression name="expression">dimension["Group"]["furnoapp"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">furnowaitapp</property>
+                    <expression name="expression">dimension["Group"]["furnowaitapp"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">furnoshell</property>
+                    <expression name="expression">dimension["Group"]["furnoshell"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">furnoshellready</property>
+                    <expression name="expression">dimension["Group"]["furnoshellready"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">furnocoachoturn</property>
+                    <expression name="expression">dimension["Group"]["furnocoachoturn"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">furnocoachgateout</property>
+                    <expression name="expression">dimension["Group"]["furnocoachgateout"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+        </extended-item>
+    </body>
+</report>
