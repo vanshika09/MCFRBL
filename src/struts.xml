@@ -930,6 +930,16 @@
 <action name="furnishingStageClearance">
 					<result name="success" type="tiles">/furnishingStageClearance.tiles</result>
 	</action>
+	<action name="HelpRequired">
+					<result name="success" type="tiles">/HelpRequired.tiles</result>
+	</action>
+	<action name="SendMessages">
+					<result name="success" type="tiles">/SendMessages.tiles</result>
+	</action>
+	<action name="pass">
+					<result name="success" type="tiles">/pass.tiles</result>
+	</action>		
+	
 <action name="furnishingstagescompleted">
 			<result name="success" type="tiles">/furnishingstagescompleted.tiles</result>
 </action>

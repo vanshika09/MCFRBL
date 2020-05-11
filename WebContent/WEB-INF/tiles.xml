@@ -620,6 +620,16 @@
 <definition name="/furnishingStageClearance.tiles" extends="baseLayout">
 	<put-attribute name="body" value="/furnishingStageClearance.jsp"/>
 	</definition>	
+<definition name="/HelpRequired.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/help.jsp"/>
+	</definition>
+<definition name="/SendMessages.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/SendMessage.jsp"/>
+	</definition>
+	<definition name="/pass.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/pass.jsp"/>
+	</definition>
+	
 <definition name="/furnishingstagescompleted.tiles" extends="baseLayout">
 	<put-attribute name="body" value="/coachclearance.jsp"/>
 </definition>
