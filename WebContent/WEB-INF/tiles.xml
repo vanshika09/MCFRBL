@@ -626,9 +626,22 @@
 <definition name="/SendMessages.tiles" extends="baseLayout">
 	<put-attribute name="body" value="/SendMessage.jsp"/>
 	</definition>
+<definition name="/profile.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/profile.jsp"/>
+	</definition>	
 	<definition name="/pass.tiles" extends="baseLayout">
 	<put-attribute name="body" value="/pass.jsp"/>
 	</definition>
+<definition name="/Addressbook.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/AddressBook.jsp"/>
+	</definition>
+	
+<definition name="/edit.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/edit.jsp"/>
+	</definition>	
+	<definition name="/UpdateProfile.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/UpdateProfile.jsp"/>
+	</definition>	
 	
 <definition name="/furnishingstagescompleted.tiles" extends="baseLayout">
 	<put-attribute name="body" value="/coachclearance.jsp"/>

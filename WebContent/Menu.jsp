@@ -705,7 +705,7 @@ String roles=loginUser.getRoles();
  	 	 </ul>
  	 	 </li>
  	 	 
- 	 	  <li><s:a href="report-machine-failure">AddressBook</s:a></li>
+ 	 	  <li><s:a href="Addressbook">AddressBook</s:a></li>
           <li><s:a href="HelpRequired">Help</s:a></li>
  	 	 
  	 	

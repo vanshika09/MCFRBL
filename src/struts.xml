@@ -936,8 +936,22 @@
 	<action name="SendMessages">
 					<result name="success" type="tiles">/SendMessages.tiles</result>
 	</action>
-	<action name="pass">
+	<action name="profile" >
+					<result name="success" type="tiles">/profile.tiles</result>
+	</action>
+<action name="Addressbook" >
+					<result name="success" type="tiles">/Addressbook.tiles</result>
+	</action>	
+	
+<action name="edit">
+					<result name="success" type="tiles">/edit.tiles</result>
+	</action>
+		
+<action name="pass">
 					<result name="success" type="tiles">/pass.tiles</result>
+	</action>	
+<action name="UpdateProfile">
+					<result name="success" type="tiles">/UpdateProfile.tiles</result>
 	</action>		
 	
 <action name="furnishingstagescompleted">
