@@ -1,4 +1,8 @@
-	 function tests(){
+function goBack() {
+	  window.history.back();
+	}
+
+function tests(){
 	var val=true;
 	var fn=document.forms[0].fn.value;
 	//var ln=document.forms[0].ln.value;
