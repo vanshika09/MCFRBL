@@ -22,6 +22,12 @@
 <definition name="/error.tiles" extends="baseLayout">
         <put-attribute name="body" value="/error.jsp" />
 </definition>
+<definition name="/Docs.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/documents.jsp" />
+</definition>
+<definition name="/manageDocs.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/managedocs.jsp" />
+</definition>
 	<definition name="/working_days_by_year.tiles" extends="baseLayout">
         <put-attribute name="body" value="/working_days_by_year.jsp" />
 </definition>

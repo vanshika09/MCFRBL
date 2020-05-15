@@ -19,12 +19,11 @@
 </script>
 </head>
 <body>
-<%-- <jsp:include page="header.jsp"></jsp:include> --%>
-<%
+
 //Class.forName("com.mysql.jdbc.Driver");
-//Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/"+"dms","root","root");
 DbConnection db=new DbConnection();
-Connection con=db.getConnection();   
+Connection con=db.getConnection();
+
 Statement st=con.createStatement();
 Statement st2=con.createStatement();
 String uid=(String)session.getAttribute("userid");
@@ -34,19 +33,26 @@ ResultSet rs=st.executeQuery("select * from public.approval where approvalby='"+
 boolean z=rs.next();
 if(z){
 %>
-<form action="judge.jsp" method="post" onsubmit="return vals()" name="myform">
-<table align="center" border="1">
+
+<form action="judge" method="post" onsubmit="return vals()" name="myform">
+<table class="table table-striped">
+	<thead>
 	<tr>
-		<th>document name</th>
-		<th>docid</th>
-		<th>sent by</th>
+		<th>Document name</th>
+		<th>Docid</th>
+		<th>Sent by</th>
 		<th>Remarks</th>
 	</tr>
+</thead>	
+
 	<%while(z){ 
 			
 				rs3=st2.executeQuery("select * from public.documentload where docid='"+rs.getString("docid")+"' ");
 				rs3.next();
 		%>
+
+  <tbody>
+
 	<tr>
 
 		<td><input type="checkbox" name="selec" value='<%=rs3.getString("docid")%>'> 
@@ -60,15 +66,28 @@ if(z){
 		z=rs.next();}
 		%>
 	<tr>
-		<td><input type="submit" value="approve" name="approval"></td>
-		<td><input type="submit" value="reject" name="approval"></td>
+
+		<td align="center" colspan="3"><!-- <input type="submit" value="approve" name="approval"> -->
+		<button type="submit" value="approve" name="approval" class="btn btn-default btn-sm">
+		     <span class="glyphicon glyphicon-ok"></span> Approve
+                               </button>
+                               
+         <button type="submit" value="reject" name="approval" class="btn btn-default btn-sm">
+		     <span class="glyphicon glyphicon-remove"></span> Reject
+                               </button>                      
+                </td>               
+		<!-- <input type="submit" value="reject" name="approval"></td> -->
 	</tr>
+ </tbody>		
+
 </table>
 </form>
 <%}
 else{
 %>
-<h3 align="center">no documents to approve</h3>
+
+<h3 align="center">No documents to approve</h3>
+
 <%	
 }
 %>
