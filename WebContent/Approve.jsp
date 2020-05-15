@@ -20,10 +20,12 @@
 </head>
 <body>
 
+
 <%
 //Class.forName("com.mysql.jdbc.Driver");
 DbConnection db=new DbConnection();
 Connection con=db.getConnection();
+
 Statement st=con.createStatement();
 Statement st2=con.createStatement();
 String uid=(String)session.getAttribute("userid");
@@ -33,6 +35,7 @@ ResultSet rs=st.executeQuery("select * from public.approval where approvalby='"+
 boolean z=rs.next();
 if(z){
 %>
+
 <form action="judge" method="post" onsubmit="return vals()" name="myform">
 <table class="table table-striped">
 	<thead>
@@ -43,12 +46,15 @@ if(z){
 		<th>Remarks</th>
 	</tr>
 </thead>	
+
 	<%while(z){ 
 			
 				rs3=st2.executeQuery("select * from public.documentload where docid='"+rs.getString("docid")+"' ");
 				rs3.next();
 		%>
+
 	<tbody>
+
 	<tr>
 
 		<td><input type="checkbox" name="selec" value='<%=rs3.getString("docid")%>'> 
@@ -62,6 +68,7 @@ if(z){
 		z=rs.next();}
 		%>
 	<tr>
+
 		<td align="center" colspan="3"><!-- <input type="submit" value="approve" name="approval"> -->
 		<button type="submit" value="approve" name="approval" class="btn btn-default btn-sm">
 		     <span class="glyphicon glyphicon-ok"></span> Approve
@@ -74,12 +81,15 @@ if(z){
 		<!-- <input type="submit" value="reject" name="approval"></td> -->
 	</tr>
  </tbody>		
+
 </table>
 </form>
 <%}
 else{
 %>
+
 <h3 align="center">No documents to approve</h3>
+
 <%	
 }
 %>

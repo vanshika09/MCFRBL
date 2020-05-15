@@ -13,6 +13,21 @@
 		
 	</definition>
 	
+	<definition name="/UploadFileSample.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/uploadFileSample.jsp" />
+</definition>
+<definition name="/success.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/success.jsp" />
+</definition>
+<definition name="/error.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/error.jsp" />
+</definition>
+<definition name="/Docs.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/documents.jsp" />
+</definition>
+<definition name="/manageDocs.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/managedocs.jsp" />
+</definition>
 	<definition name="/working_days_by_year.tiles" extends="baseLayout">
         <put-attribute name="body" value="/working_days_by_year.jsp" />
 </definition>
@@ -632,6 +647,7 @@
 	<definition name="/pass.tiles" extends="baseLayout">
 	<put-attribute name="body" value="/pass.jsp"/>
 	</definition>
+
 <definition name="/Addressbook.tiles" extends="baseLayout">
 	<put-attribute name="body" value="/AddressBook.jsp"/>
 	</definition>
@@ -679,6 +695,28 @@
 	<definition name="/UpdateProfile.tiles" extends="baseLayout">
 	<put-attribute name="body" value="/UpdateProfile.jsp"/>
 	</definition>	
+<definition name="/approval.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/approval.jsp"/>
+	</definition>
+	<definition name="/upload.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/upload.jsp"/>
+	</definition>
+	<definition name="/uploadFile.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/uploadFile.jsp"/>
+	</definition>
+	<definition name="/DownloadView.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/DownloadView.jsp"/>
+	</definition>
+	<definition name="/NewDownloadView.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/NewDownloadView.jsp"/>
+	</definition>
+	<definition name="/removedoc.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/removedoc.jsp"/>
+	</definition>
+	<definition name="/share.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/share.jsp"/>
+	</definition>
+
 	
 <definition name="/furnishingstagescompleted.tiles" extends="baseLayout">
 	<put-attribute name="body" value="/coachclearance.jsp"/>

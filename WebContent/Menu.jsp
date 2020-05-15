@@ -117,6 +117,7 @@ String roles=loginUser.getRoles();
  	  <ul class="dropdown-menu">
  	        <li><s:a href="abnormality-form">Abnormality</s:a></li>
  	        <li><s:a href="material-shortage-form">Material Shortage</s:a></li>
+ 	       
  	  	<% if(roles.equals("All")) {%>
  	  	    <li><s:a href="annual-target">Annual Coach Target</s:a></li>
  	  	<%} %>
@@ -698,10 +699,12 @@ String roles=loginUser.getRoles();
  	 	 <li class="dropdown-submenu" id="dropMenu">
  	 	 <a tabindex="-1" href="#">Manage<span class="glyphicon glyphicon-shopping-cart"></span></a>
  	 	 <ul class="dropdown-menu">
+
  	 	       <li><s:a href="manageusers">Manage users</s:a></li>
- 			 <li><s:a href="Documentsmanage">Manage Documents</s:a></li>
+ 			 <li><s:a href="manage-document">Manage Documents</s:a></li>
  	 	 <%--   <li><s:a href="genreport">Generate Report</s:a></li> --%>		
  	 	   <li><s:a href="Approve">Approve Documents</s:a></li>
+
  	 	 </ul>
  	 	 </li>
  	 	 
@@ -711,9 +714,28 @@ String roles=loginUser.getRoles();
  	 	
  </ul>	 	 
 </li>
+ <%}else {  %>
+ <li class="root">
+<a href="#" class="dropdown-toggle"   data-toggle="dropdown" style="margin-left:4px;">DatabaseManagementSystem<span class="glyphicon glyphicon-object-align-bottom" ></span></a>
+	 	 	<ul class="dropdown-menu"> 
+ 					 <li><s:a href="upload-file-sample">create document</s:a></li>
+			     
+			      <li class="dropdown-submenu" id="dropMenu">
+			      <a tabindex="-1" href="#">View<span class="glyphicon glyphicon-shopping-cart"></span></a>
+			       <ul class="dropdown-menu">
+		    	
+		      <li><s:a href="DownloadView">My Documents</s:a></li>
+		      <li><s:a href="NewDownloadView" >Shared Documents</s:a></li>
+		      </ul>
+		      </ul>
+		      </li>
+		    	
+		
+		  
  <%} %>
 
-</ul>
+
+
 <ul class="nav navbar-nav navbar-right">
       <li class="root">
 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Account<span class="glyphicon glyphicon-user" style="padding-right:20px;"></span></a>
@@ -729,6 +751,7 @@ String roles=loginUser.getRoles();
   	</ul>
       </li>
 </ul>
+
 <% 
 session1.close();
 %>

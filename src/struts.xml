@@ -973,6 +973,7 @@
 		
 <action name="pass">
 					<result name="success" type="tiles">/pass.tiles</result>
+
 	</action>
 <action name="message">
 					<result name="success" type="tiles">/message.tiles</result>
@@ -986,6 +987,54 @@
 <action name="UpdateProfile">
 					<result name="success" type="tiles">/UpdateProfile.tiles</result>
 	</action>		
+  <action name="approval">
+					<result name="success" type="tiles">/approval.tiles</result>
+	</action>	
+	<action name="approve">
+					<result name="success" type="tiles">/Approve.tiles</result>
+	</action>	
+	<!-- <action name="upload">
+					<result name="success" type="tiles">/upload.tiles</result>
+	</action>	 -->
+	<action name="uploadFile">
+					<result name="success" type="tiles">/uploadFile.tiles</result>
+	</action>
+	<action name="DownloadView">
+					<result name="success" type="tiles">/DownloadView.tiles</result>
+	</action>	
+	<action name="NewDownloadView">
+					<result name="success" type="tiles">/NewDownloadView.tiles</result>
+	</action>	
+	<action name="upload-file-sample">
+					<result name="success" type="tiles">/UploadFileSample.tiles</result>
+	</action> 
+	<action name = "upload" class = "ACTION.uploadFile" method="execute">
+		<!-- <interceptor-ref name = "basicStack">
+   		<interceptor-ref name = "fileUpload">
+      	<param name = "allowedTypes">image/jpeg,image/gif</param>
+   		</interceptor-ref>
+   		</interceptor-ref> -->
+   		<result name = "success">/success.tiles</result>
+  		 <result name = "error">/error.tiles</result>
+	</action>
+	
+	<action name="removedoc">
+					<result name="success" type="tiles">/removedoc.tiles</result>
+	</action>
+	<action name="manage-document">
+					<result name="success" type="tiles">/Docs.tiles</result>
+	</action>
+	<!-- <action name="managedocs" class="ACTION.managedocs"  method="execute">
+					<result name="success" type="tiles">/manageDocs.tiles</result>
+					<result name="error" type="tiles">/error.tiles</result>
+	</action> -->
+	<action name="managedocs" >
+	<result name="success" type="tiles">/manageDocs.tiles</result>
+	</action>
+	<action name="share">
+					<result name="success" type="tiles">/share.tiles</result>
+	</action>
+
 	
 <action name="furnishingstagescompleted">
 			<result name="success" type="tiles">/furnishingstagescompleted.tiles</result>
