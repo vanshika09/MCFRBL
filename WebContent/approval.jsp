@@ -39,11 +39,7 @@ Connection con=db.getConnection();
 			rs.next();
 			String Doctype=rs.getString(10);
 		   
-			/* ResultSet rs5=st1.executeQuery("select * from public.approval where docid='"+s+"'");
-			rs.next();	
 			
-			String x1=rs5.getString("docid");
-			System.out.println(x1);  */
   
 				st2.executeUpdate("insert into public.approval values('documentload','"+s+"','"+uid+"','"+appBy+"','Yet to','"+Doctype+"','"+remarks+"')");	
 			       
@@ -52,16 +48,7 @@ Connection con=db.getConnection();
 			       
 			}
 			
-		 /* for(int i=0;i<vlength;i++)
-			{	String s=(String)session.getAttribute("v"+i);
-			ResultSet rs=st1.executeQuery("select * from public.documentload where docid='"+s+"'");
-			rs.next();
-			String Doctype=rs.getString(10);
-				st2.executeUpdate("insert into public.approval values('documentshared','"+s+"','"+uid+"','"+appBy+"','Yet to','"+Doctype+"','"+remarks+"')");
-				st2.executeUpdate("insert into public.noting_trans values('"+su+"','"+s+"','"+remarks+"','"+uid+"','"+f.format(s1)+"')");
-				 st2.executeUpdate("insert into public.noting_ids values('"+su+"')");
-			} 
-		 */
+		
 		         
 		
 		

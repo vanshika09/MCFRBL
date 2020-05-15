@@ -699,8 +699,8 @@ String roles=loginUser.getRoles();
  	 	 <li class="dropdown-submenu" id="dropMenu">
  	 	 <a tabindex="-1" href="#">Manage<span class="glyphicon glyphicon-shopping-cart"></span></a>
  	 	 <ul class="dropdown-menu">
- 	 	       <li><s:a href="machine-schedule-add">Manage users</s:a></li>
- 			 <li><s:a href="machine-schedule-activity-add">Manage Documents</s:a></li>
+ 	 	       <li><s:a href="manage-users">Manage users</s:a></li>
+ 			 <li><s:a href="manage-document">Manage Documents</s:a></li>
  	 	   <li><s:a href="machine-list">Generate Report</s:a></li>
  	 	   <li><s:a href="link-spare-master-by-machine">Approve Documents</s:a></li>
  	 	 </ul>

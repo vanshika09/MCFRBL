@@ -973,6 +973,16 @@
 	<action name="removedoc">
 					<result name="success" type="tiles">/removedoc.tiles</result>
 	</action>
+	<action name="manage-document">
+					<result name="success" type="tiles">/Docs.tiles</result>
+	</action>
+	<!-- <action name="managedocs" class="ACTION.managedocs"  method="execute">
+					<result name="success" type="tiles">/manageDocs.tiles</result>
+					<result name="error" type="tiles">/error.tiles</result>
+	</action> -->
+	<action name="managedocs" >
+	<result name="success" type="tiles">/manageDocs.tiles</result>
+	</action>
 	<action name="share">
 					<result name="success" type="tiles">/share.tiles</result>
 	</action>
