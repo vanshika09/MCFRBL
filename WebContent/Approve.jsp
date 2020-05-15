@@ -20,6 +20,8 @@
 </head>
 <body>
 
+
+<%
 //Class.forName("com.mysql.jdbc.Driver");
 DbConnection db=new DbConnection();
 Connection con=db.getConnection();
@@ -51,7 +53,7 @@ if(z){
 				rs3.next();
 		%>
 
-  <tbody>
+	<tbody>
 
 	<tr>
 

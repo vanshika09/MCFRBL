@@ -692,21 +692,23 @@ String roles=loginUser.getRoles();
  	 	 <a tabindex="-1" href="#">Messages<span class="glyphicon glyphicon-shopping-cart"></span></a>
  	 	 <ul class="dropdown-menu">
  	 	  <li><s:a href="SendMessages">SendMessage</s:a></li>
- 	 	   <li><s:a href="machine-schedule-activity">Inbox</s:a></li>
- 	 	  <li><s:a href="add-amc-agency-master">Outbox</s:a></li>
+ 	 	   <li><s:a href="inbox">Inbox</s:a></li>
+ 	 	  <li><s:a href="outbox">Outbox</s:a></li>
  	 	 </ul>
  	 	 </li>
  	 	 <li class="dropdown-submenu" id="dropMenu">
  	 	 <a tabindex="-1" href="#">Manage<span class="glyphicon glyphicon-shopping-cart"></span></a>
  	 	 <ul class="dropdown-menu">
- 	 	       <li><s:a href="manage-users">Manage users</s:a></li>
+
+ 	 	       <li><s:a href="manageusers">Manage users</s:a></li>
  			 <li><s:a href="manage-document">Manage Documents</s:a></li>
- 	 	   <li><s:a href="machine-list">Generate Report</s:a></li>
- 	 	   <li><s:a href="link-spare-master-by-machine">Approve Documents</s:a></li>
+ 	 	 <%--   <li><s:a href="genreport">Generate Report</s:a></li> --%>		
+ 	 	   <li><s:a href="Approve">Approve Documents</s:a></li>
+
  	 	 </ul>
  	 	 </li>
  	 	 
- 	 	  <li><s:a href="report-machine-failure">AddressBook</s:a></li>
+ 	 	  <li><s:a href="Addressbook">AddressBook</s:a></li>
           <li><s:a href="HelpRequired">Help</s:a></li>
  	 	 
  	 	

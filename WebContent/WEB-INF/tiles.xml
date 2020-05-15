@@ -641,13 +641,61 @@
 <definition name="/SendMessages.tiles" extends="baseLayout">
 	<put-attribute name="body" value="/SendMessage.jsp"/>
 	</definition>
+<definition name="/profile.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/profile.jsp"/>
+	</definition>	
 	<definition name="/pass.tiles" extends="baseLayout">
 	<put-attribute name="body" value="/pass.jsp"/>
 	</definition>
-	<definition name="/Approve.tiles" extends="baseLayout">
+
+<definition name="/Addressbook.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/AddressBook.jsp"/>
+	</definition>
+	
+	<definition name="/manageUsersinfo.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/manageUsersinfo.jsp"/>
+	</definition>
+	
+<definition name="/forward.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/forward.jsp"/>
+	</definition>	
+	
+  <definition name="/Approve.tiles" extends="baseLayout">
 	<put-attribute name="body" value="/Approve.jsp"/>
 	</definition>
-	<definition name="/approval.tiles" extends="baseLayout">
+	
+	<definition name="/judge.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/judge.jsp"/>
+	</definition>		
+	<definition name="/outbox.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/outbox.jsp"/>
+	</definition>
+ <definition name="/manageusers.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/users.jsp"/>
+	</definition>	
+	<definition name="/Documentsmanage.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/documents.jsp"/>
+	</definition>	
+<definition name="/managedocs.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/managedocs.jsp"/>
+	</definition>	
+<definition name="/message.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/message.jsp"/>
+	</definition>	
+	<definition name="/inbox.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/inbox.jsp"/>
+	</definition>
+	<definition name="/nextStepMsg.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/nextStepMsg.jsp"/>
+	</definition>
+	
+<definition name="/edit.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/edit.jsp"/>
+	</definition>	
+	<definition name="/UpdateProfile.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/UpdateProfile.jsp"/>
+	</definition>	
+<definition name="/approval.tiles" extends="baseLayout">
 	<put-attribute name="body" value="/approval.jsp"/>
 	</definition>
 	<definition name="/upload.tiles" extends="baseLayout">
@@ -668,6 +716,7 @@
 	<definition name="/share.tiles" extends="baseLayout">
 	<put-attribute name="body" value="/share.jsp"/>
 	</definition>
+
 	
 <definition name="/furnishingstagescompleted.tiles" extends="baseLayout">
 	<put-attribute name="body" value="/coachclearance.jsp"/>

@@ -5,6 +5,7 @@
 <html>
 <head>
 </head>
+
 <body>
 <%
 	boolean flag=false;
@@ -26,6 +27,7 @@
 		<% 
 	}
 %>
+
 
 </body>
 </html>

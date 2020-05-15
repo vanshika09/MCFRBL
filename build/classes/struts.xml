@@ -936,10 +936,58 @@
 	<action name="SendMessages">
 					<result name="success" type="tiles">/SendMessages.tiles</result>
 	</action>
-	<action name="pass">
-					<result name="success" type="tiles">/pass.tiles</result>
+	<action name="profile" >
+					<result name="success" type="tiles">/profile.tiles</result>
+	</action>
+<action name="Addressbook" >
+					<result name="success" type="tiles">/Addressbook.tiles</result>
 	</action>	
-	<action name="approval">
+	<action name="forward" >
+					<result name="success" type="tiles">/forward.tiles</result>
+	</action>	
+  <action name="outbox" >
+					<result name="success" type="tiles">/outbox.tiles</result>
+	</action>	
+	<action name="manageusers" >
+					<result name="success" type="tiles">/manageusers.tiles</result>
+	</action>	
+	<action name="manageUsersinfo" >
+					<result name="success" type="tiles">/manageUsersinfo.tiles</result>
+	</action>	
+ <action name="judge" >
+					<result name="success" type="tiles">/judge.tiles</result>
+	</action>
+	
+	<action name="Documentsmanage" >
+					<result name="success" type="tiles">/Documentsmanage.tiles</result>
+	</action>
+	<action name="managedocs" >
+					<result name="success" type="tiles">/managedocs.tiles</result>
+	</action> 
+<action name="edit">
+					<result name="success" type="tiles">/edit.tiles</result>
+	</action>
+	<action name="Approve">
+					<result name="success" type="tiles">/Approve.tiles</result>
+	</action>
+		
+<action name="pass">
+					<result name="success" type="tiles">/pass.tiles</result>
+
+	</action>
+<action name="message">
+					<result name="success" type="tiles">/message.tiles</result>
+	</action>	
+	<action name="inbox">
+					<result name="success" type="tiles">/inbox.tiles</result>
+	</action>	
+	<action name="nextStepMsg">
+					<result name="success" type="tiles">/nextStepMsg.tiles</result>
+	</action>	
+<action name="UpdateProfile">
+					<result name="success" type="tiles">/UpdateProfile.tiles</result>
+	</action>		
+<action name="approval">
 					<result name="success" type="tiles">/approval.tiles</result>
 	</action>	
 	<action name="approve">
