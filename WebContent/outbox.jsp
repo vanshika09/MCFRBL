@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="java.sql.*"%>
     <%@ page import="dao.*" %>
-    <%@ taglib prefix="s" uri="/struts-tags"%>  
+   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -36,29 +36,43 @@ boolean z=rs.next();
 if(z){
 %>	<form action="nextStepMsg" method="post" onsubmit="return msgVal()" name="msgs">
 	<h2 align="center">outbox</h2>
-	<table cellspacing="20" align="center">
+	<table class="table table-striped">
+	<thead>
 		<tr>
-			<td>sender</td>
-			<td>subject</td>
-			<td>on</td>
+			<th>Sender</th>
+			<th>Subject</th>
+			<th>On</th>
 		</tr>
+		</thead>
+	<tbody>	
 		<tr>
 <%while(z){
 	session.setAttribute("status","senderstatus");
 %>
 	
 			<td><input type="checkbox" name="sub" value="<%=rs.getString("mid")%>"><%=rs.getString("reciever") %></td>
-			<td><s:a href="message.jsp?msg=<%=rs.getString("message")%>&sub=<%=rs.getString("subject")%>"><%=rs.getString("subject")%></s:a></td>
+			<td><a href="message?msg=<%=rs.getString("message")%>&sub=<%=rs.getString("subject")%>"><%=rs.getString("subject")%></a></td>
 			<td><%=rs.getString("at") %></td>
 		</tr>			
 <%	z=rs.next();
 }
 %>
 		<tr>
-			<td><input type="submit" value="delete" name="s" >
-			<input type="submit" value="forward" name="s" >
+			
+			
+			<td align="center" colspan="3">
+		    <button type="submit" value="delete" name="s" class="btn btn-default btn-sm">
+		     <span class="glyphicon glyphicon-remove"></span> Delete
+                               </button>
+                               
+             <button type="submit" value="forward" name="s" class="btn btn-default btn-sm">
+		     <span class="glyphicon glyphicon-share"></span> Forward
+                               </button>                    
+                               
+           
 			</td>
 		</tr>
+ </tbody>		
 	</table>
 	</form>
 <%}

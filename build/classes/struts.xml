@@ -954,9 +954,21 @@
 	<action name="manageUsersinfo" >
 					<result name="success" type="tiles">/manageUsersinfo.tiles</result>
 	</action>	
+ <action name="judge" >
+					<result name="success" type="tiles">/judge.tiles</result>
+	</action>
 	
+	<action name="Documentsmanage" >
+					<result name="success" type="tiles">/Documentsmanage.tiles</result>
+	</action>
+	<action name="managedocs" >
+					<result name="success" type="tiles">/managedocs.tiles</result>
+	</action> 
 <action name="edit">
 					<result name="success" type="tiles">/edit.tiles</result>
+	</action>
+	<action name="Approve">
+					<result name="success" type="tiles">/Approve.tiles</result>
 	</action>
 		
 <action name="pass">

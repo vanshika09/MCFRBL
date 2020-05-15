@@ -6,31 +6,52 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+
 </head>
 
+<style>
+.names { 
+font-weight: bold; }
+</style>
+
 <body>
-<jsp:include page="BaseLayout.jsp"></jsp:include> 
+
 <%
 	String status=(String)session.getAttribute("status");
-if(status.equals("recieverstatus")){
 %>
-<h3 align="center"><s:a href="inbox"> back to inbox </s:a></h3>
- 
-<%}else{ %>
-<h3 align="center"><s:a href="outbox"> back to outbox </s:a></h3>
-<%} %>
 <br>
-<table style="color: black" bgcolor="white" align="center" height="200" width="700">
+<table class="table table-striped">
+<thead>
 <tr>
-	<td><%=request.getParameter("sub") %></td>
+	<td ><span class="names">Subject:</span></td><td><%=request.getParameter("sub") %></td>
 </tr>
+</thead>
+<tbody>
 <tr>
+	<td><span class="names">Description:</span></td>
 	<td>
 	<%
 		out.println(request.getParameter("msg"));
 	%>
 	</td>
-</tr>
+    </tr>
+</tbody>
 </table>
+<%
+      if(status.equals("recieverstatus")){
+%>
+<h3 align="center"><a href="inbox">
+ <button type="submit" class="btn btn-default btn-sm">
+		     <span class="glyphicon glyphicon-arrow-left"></span> Back
+                               </button>          
+ </a></h3>
+<%}else{ %>
+
+<h3 align="center"><a href="outbox">
+ <button type="submit" class="btn btn-default btn-sm">
+		     <span class="glyphicon glyphicon-arrow-left"></span> Back
+                               </button>          
+ </a></h3>
+<%} %>
 </body>
 </html>

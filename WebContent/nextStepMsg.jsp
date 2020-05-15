@@ -22,12 +22,12 @@ String status=(String)session.getAttribute("status");
 			st.executeUpdate("update public.message set "+status+"='deleted' where mid='"+s[i]+"'");
 		}
 		if(status.equals("recieverstatus")){
-%>
-			<jsp:forward page="inbox.jsp"></jsp:forward>
+%>          
+			<jsp:forward page="inbox"></jsp:forward>
 <% 		}
 		else{
 %>
-			<jsp:forward page="outbox.jsp"></jsp:forward>
+			<jsp:forward page="outbox"></jsp:forward>
 <%			
 		}
 }

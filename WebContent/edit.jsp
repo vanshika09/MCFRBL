@@ -141,7 +141,12 @@ Connection con=db.getConnection();
 	String usertype=rs.getString("user_type");
 	String dept=rs.getString("department");
 	%>
-	
+	<h3 align="left" style="margin-left:20px;"><a href="profile">
+ <button type="submit" class="btn btn-default btn-sm">
+		     <span class="glyphicon glyphicon-arrow-left"></span> Cancel
+                               </button>          
+ </a>
+	</h3>
 	<form action="UpdateProfile"  method="post" onsubmit="return tests()" >
 		  <div class="container">
 			<table align="center" class="table table-bordered">
@@ -184,13 +189,13 @@ Connection con=db.getConnection();
 				</tr>
 				<tr>
 				        <td align="center" colspan="2" ><!-- <input type="submit" value="update"/> -->
-				        <button type="submit" value="update" >update</button>
-				    <!--  <input type="submit" id="SUBMIT" value="Back" name="Back" class="submitBtn" onclick="goBack()"> -->
-				 <!-- <button type="button" onclick="goBack()" >Cancel</button> -->
-				      <s:a href="profile"><button>Cancel</button></s:a>
+				       <!--  <button type="submit" value="update" >update</button> -->
+				       <button type="submit"  value="update" class="btn btn-default btn-sm">
+		                    <span class="glyphicon glyphicon-upload"></span> Update
+                  </button>
 				</tr>
 				</table>	
 			</div>			
 		</form>
-	
+		        
 	</body>
