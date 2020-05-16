@@ -27,7 +27,7 @@
 <body>
 
 
-<h3 align="left" style="margin-left:20px;"><a href="login">
+<h3 align="left" style="margin-left:20px;"><a href="profile">
  <button type="submit" class="btn btn-default btn-sm">
 		     <span class="glyphicon glyphicon-arrow-left"></span> Cancel
                                </button>          
@@ -80,7 +80,7 @@ if(z){
 
 	         <!--  <input type="submit" value="delete"></td> -->
 		<td align="center" colspan="5">
-		<input type="button"  value="SUBMIT" name="SUBMIT" id="SUBMIT" class="submitBtn" onClick="return sendValues(this)">
+		<!-- <input type="button"  value="SUBMIT" name="SUBMIT" id="SUBMIT" class="submitBtn" onClick="return sendValues(this)"> -->
 	
 		    <button type="submit" value="delete"  class="btn btn-default btn-sm">
 		     <span class="glyphicon glyphicon-remove"></span> Delete

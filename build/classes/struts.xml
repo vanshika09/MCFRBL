@@ -987,7 +987,7 @@
 <action name="UpdateProfile">
 					<result name="success" type="tiles">/UpdateProfile.tiles</result>
 	</action>		
-<action name="approval">
+  <action name="approval">
 					<result name="success" type="tiles">/approval.tiles</result>
 	</action>	
 	<action name="approve">
@@ -1034,6 +1034,7 @@
 	<action name="share">
 					<result name="success" type="tiles">/share.tiles</result>
 	</action>
+
 	
 <action name="furnishingstagescompleted">
 			<result name="success" type="tiles">/furnishingstagescompleted.tiles</result>

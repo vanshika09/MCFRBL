@@ -718,18 +718,32 @@ String roles=loginUser.getRoles();
  <li class="root">
 <a href="#" class="dropdown-toggle"   data-toggle="dropdown" style="margin-left:4px;">DatabaseManagementSystem<span class="glyphicon glyphicon-object-align-bottom" ></span></a>
 	 	 	<ul class="dropdown-menu"> 
- 					 <li><s:a href="upload-file-sample">create document</s:a></li>
+	 	 	<li><a href="profile" >Profile</a></li>
+ 	 	 <li class="dropdown-submenu" id="dropMenu">
+ 	 	 <a tabindex="-1" href="#">Messages<span class="glyphicon glyphicon-shopping-cart"></span></a>
+ 	 	 <ul class="dropdown-menu">
+ 	 	  <li><s:a href="SendMessages">SendMessage</s:a></li>
+ 	 	   <li><s:a href="inbox">Inbox</s:a></li>
+ 	 	  <li><s:a href="outbox">Outbox</s:a></li>
+ 	 	 </ul>
+ 	 	 </li>
+ 	 	 
+ 		<li><s:a href="upload-file-sample">create document</s:a></li>
 			     
-			      <li class="dropdown-submenu" id="dropMenu">
+	    <li class="dropdown-submenu" id="dropMenu">
 			      <a tabindex="-1" href="#">View<span class="glyphicon glyphicon-shopping-cart"></span></a>
 			       <ul class="dropdown-menu">
 		    	
 		      <li><s:a href="DownloadView">My Documents</s:a></li>
 		      <li><s:a href="NewDownloadView" >Shared Documents</s:a></li>
 		      </ul>
-		      </ul>
-		      </li>
-		    	
+		  <li><s:a href="Addressbook">AddressBook</s:a></li>
+          <li><s:a href="HelpRequired">Help</s:a></li> 
+		     
+</ul>
+</li>
+		   
+ 	 	 	
 		
 		  
  <%} %>
