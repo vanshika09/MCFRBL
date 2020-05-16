@@ -95,7 +95,7 @@ String doc=session.getAttribute("docid").toString();
 			
 			    <tr>
 			    	<td><label for="Author">Author:</label></td>
-			    	<td><input class="form-control" type="text" name="Author" id="Author" value=<%=user %>   ></td>
+			    	<td><input class="form-control" type="text" name="Author" id="Author" value=<%=user %>  readonly ></td>
 			    </tr>
 			    <tr>
 			    	<td>Document id:</td>

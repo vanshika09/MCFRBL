@@ -961,9 +961,9 @@
 	<action name="Documentsmanage" >
 					<result name="success" type="tiles">/Documentsmanage.tiles</result>
 	</action>
-	<action name="managedocs" >
+	<!-- <action name="managedocs" >
 					<result name="success" type="tiles">/managedocs.tiles</result>
-	</action> 
+	</action>  -->
 <action name="edit">
 					<result name="success" type="tiles">/edit.tiles</result>
 	</action>
@@ -1009,13 +1009,8 @@
 					<result name="success" type="tiles">/UploadFileSample.tiles</result>
 	</action> 
 	<action name = "upload" class = "ACTION.uploadFile" method="execute">
-		<!-- <interceptor-ref name = "basicStack">
-   		<interceptor-ref name = "fileUpload">
-      	<param name = "allowedTypes">image/jpeg,image/gif</param>
-   		</interceptor-ref>
-   		</interceptor-ref> -->
-   		<result name = "success">/success.tiles</result>
-  		 <result name = "error">/error.tiles</result>
+   		<result name = "success" type="tiles">/uploadsuccess.tiles</result>
+  		 <result name = "error" type="tiles">/uploaderror.tiles</result>
 	</action>
 	
 	<action name="removedoc">

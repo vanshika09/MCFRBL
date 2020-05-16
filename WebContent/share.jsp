@@ -52,7 +52,7 @@ boolean z;
 		// st2.executeUpdate("insert into public.noting_ids values('"+su+"')");
 		}
 		  
-	  out.println("file shared");	
+	
 	
 %>      
 	<h3 align="center" style="color: red">file shared</h3>	<%-- <jsp:forward page="DownloadView.jsp"></jsp:forward> --%>
