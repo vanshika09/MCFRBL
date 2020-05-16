@@ -41,10 +41,10 @@ Connection con=db.getConnection();
 	ResultSet rs=st.executeQuery("select * from public.addressbook where userid='"+uid+"' order by contactname");
 	boolean z=rs.next();
 %>
-	<h3 align="center"><a href="addcontact.jsp">add new contact</a></h3>
+	<h3 align="center"><a href="addcontact">add new contact</a></h3>
 <%	if(z){
 %>
-	<form action="ContactManage.jsp" name="ss" onsubmit="return fun()">
+	<form action="ContactManage" name="ss" onsubmit="return fun()">
 		<table align="center">
 		<tr>
 			<th>Contact Name</th>

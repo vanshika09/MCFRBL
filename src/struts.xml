@@ -229,9 +229,11 @@
 <action name="showExistingDataOfShellSIPAssembly"  class="struts.action.master.ShowShellSIPAssembly" method="showData">         			
            			<result  name="success" type= "json"/>
 		</action>
-<action name="showExistingDataOfShellSIPFinal"  class="struts.action.master.ShowShellSIPFinal" method="showData">         			
+<action name="showExistingDataOfShellSIPAssembly"  class="struts.action.master.ShowShellSIPAssembly" method="showData">         			
            			<result  name="success" type= "json"/>
 		</action>
+				
+
 <action name="showExistingDataOfShellCheckListSip"  class="struts.action.master.ShowShellCheckListSip" method="showData">         			
            			<result  name="success" type= "json"/>
 		</action>
@@ -372,6 +374,16 @@
 		
 		<action name="daily-report-bogie">
 			<result name="success" type="tiles">/DailyReportBogie.tiles</result>
+		</action>
+		
+		<action name="ManyMsg">
+			<result name="success" type="tiles">/ManyMsg.tiles</result>
+		</action>
+		<action name="addcontact">
+			<result name="success" type="tiles">/addcontact.tiles</result>
+		</action>
+		<action name="storecontact">
+			<result name="success" type="tiles">/storecontact.tiles</result>
 		</action>
 		
 		<action name="GM-position-bogie">
@@ -1012,7 +1024,10 @@
    		<result name = "success" type="tiles">/uploadsuccess.tiles</result>
   		 <result name = "error" type="tiles">/uploaderror.tiles</result>
 	</action>
-	
+	<action name = "ContactManage">
+   		<result name = "success" type="tiles">/ContactManage.tiles</result>
+  		
+	</action>
 	<action name="removedoc">
 					<result name="success" type="tiles">/removedoc.tiles</result>
 	</action>

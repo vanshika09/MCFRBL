@@ -86,7 +86,7 @@ public class uploadFile extends ActionSupport {
     			if(x.equals(s)){
     				flag="false";
     				
-    				return ERROR;
+    				return "error";
     			}
     			}
     				
@@ -108,15 +108,15 @@ public class uploadFile extends ActionSupport {
   
       } catch(IOException e) {
          e.printStackTrace();
-         return ERROR;
+         return "error";
       } catch (SQLException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
-		  return ERROR;
+		  return "error";
 	}
      
 
-      return SUCCESS;
+      return "success";
    }
    
    public File getMyFile() {

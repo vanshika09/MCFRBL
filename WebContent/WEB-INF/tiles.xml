@@ -24,6 +24,11 @@
 <definition name="/working_days.tiles" extends="baseLayout">
         <put-attribute name="body" value="/working_days.jsp" />
 </definition>
+
+<definition name="/ContactManage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/ContactManage.jsp" />
+</definition>
+
 <definition name="/wheelShopHelp.tiles" extends="baseLayout">
         <put-attribute name="body" value="/wheelShopHelp.jsp"/>
 </definition>
@@ -637,6 +642,18 @@
 <definition name="/Addressbook.tiles" extends="baseLayout">
 	<put-attribute name="body" value="/AddressBook.jsp"/>
 	</definition>
+<definition name="/ManyMsg.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/ManyMsg.jsp"/>
+	</definition>
+	
+<definition name="/addcontact.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/addcontact.jsp"/>
+	</definition>	
+	
+	<definition name="/storecontact.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/storecontact.jsp"/>
+	</definition>	
+	
 	
 	<definition name="/manageUsersinfo.tiles" extends="baseLayout">
 	<put-attribute name="body" value="/manageUsersinfo.jsp"/>
