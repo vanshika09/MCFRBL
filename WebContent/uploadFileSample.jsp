@@ -95,15 +95,15 @@ String doc=session.getAttribute("docid").toString();
 			
 			    <tr>
 			    	<td><label for="Author">Author:</label></td>
-			    	<td><input type="text" name="Author" id="Author" value=<%=user %>   ></td>
+			    	<td><input class="form-control" type="text" name="Author" id="Author" value=<%=user %>   ></td>
 			    </tr>
 			    <tr>
 			    	<td>Document id:</td>
-			    	<td><input type="text" name="docid" id="docid"  value=<%=doc %> ></td>
+			    	 <td><input class="form-control" type="text" name="docid" id="docid"  value=<%=doc %> readonly></td>
 			    </tr>
 			    <tr>
 			    	<td>Document name</td>
-			    	<td><input type="text" name="dn" id="dn"></td>
+			    	<td><input class="form-control" type="text" name="dn" id="dn"></td>
 			    	<td><p id="f1"></p></td>
 			    </tr>
 			     <tr>
@@ -116,7 +116,7 @@ String doc=session.getAttribute("docid").toString();
                          <option value="Letter">Letter</option>
                     </select>
                     </td>
-			    	<td><p id="f7"></p></td>
+			    	<td><p id="f7"></p></td>  
 			    </tr>
 			     <tr>
 			    	<td>Description</td>
@@ -124,7 +124,7 @@ String doc=session.getAttribute("docid").toString();
 			      </tr>
 			    <tr>
 			    	<td>Version:</td>
-			    	<td><input type="text" name="ver" id="ver"  ></td>
+			    	<td><input class="form-control"  type="text" name="ver" id="ver"  ></td>
 			    	<td><p id="f2"></p></td>
 			    </tr>
 			      <%
@@ -133,7 +133,7 @@ String doc=session.getAttribute("docid").toString();
 			   	  %>
 			      <tr>
 			    	<td>date:</td>
-			    	<td><input type="text" name="date" value="<%=f.format(s1) %>" ></td>
+			    	<td><input class="form-control"  type="text" name="date" value="<%=f.format(s1) %>" readonly></td>
 			   	 </tr> 
 			   	  <tr>
    	 <td>

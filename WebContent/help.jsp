@@ -3,17 +3,33 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+ 
+  <!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> -->
+ 
+<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js">
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+
+</script>
 <title>Insert title here</title>
 </head>
 <body>
 	
 	<%String uid=(String)session.getAttribute("userid"); %>
-	<table align="center" border="2">
+	<table  id="example" class="table table-striped table-nowrap" style="width:100%">
+		<thead>
 		<tr>
-			<th>functionality</th>
-			<th>usage</th>
+			<th>Functionality</th>
+			<th>Usage</th>
 		</tr>
+		</thead>
+		<tbody>
 		<tr>
 			<td>compose</td>
 			<td>helps to create and send message to users in the system</td>
@@ -35,10 +51,10 @@
 			<td>manage users</td>
 			<td>here you can manage all the users with in the system</td>
 		</tr>
-		<tr>
+		<!-- <tr>
 			<td>report generation</td>
 			<td>to generate reports of either users or documents</td>
-		</tr>
+		</tr> -->
 		<%}else{ %>
 		<tr>
 			<td>create document</td>
@@ -68,7 +84,7 @@
 			<td>address book</td>
 			<td>here you can maintain all your contacts of the users in the system </td>
 		</tr>
-		
+		</tbody>
 	</table>
 </body>
 </html>

@@ -5,6 +5,7 @@
 <html>
 <head>
 </head>
+
 <body>
 <%
 	boolean flag=false;
@@ -22,10 +23,11 @@
 		}
 	if(flag==true){
 		%>
-		<h3 style="color: red">Document deleted successfully.</h3>
+		<h3 align="center" "color: red">Document deleted successfully.</h3>
 		<% 
 	}
 %>
+
 
 </body>
 </html>
